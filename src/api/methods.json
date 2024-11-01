@@ -1,0 +1,266 @@
+[
+    {
+        "title": "move",
+        "category": "date",
+        "eloquent": 95,
+        "description": "run through the calendar in all directions, return date.",
+        "args": [
+            {
+                "name": "flag",
+                "type": "string"
+            },
+            {
+                "name": "direction",
+                "type": "string"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [
+            {
+                "input": "If today 15.08.2024, then I call datus.move('day', '+', 5)",
+                "output": "20.05.2024"
+            }
+        ],
+        "tags": ["date", "update", "calendar"],
+        "size": 14
+    },
+    {
+        "title": "dates",
+        "category": "date",
+        "eloquent": 73,
+        "description": "create an array of dates since weekday (today by default) with time period iterations by flag ('day', 'week' or 'month'). num is a number of dates.",
+        "args": [
+            {
+                "name": "flag",
+                "type": "string"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "weekday",
+                "type": "string"
+            }
+        ],
+        "examples": [
+            {
+                "input": "If today is tuesday 29.10.2024, I call datus.dates('day', 3)",
+                "output": "['30.10.2024', '31.10.2024', '01.11.2024']"
+            }
+        ],
+        "tags": ["date", "array", "calendar"],
+        "size": 12
+    },
+    {
+        "title": "difference",
+        "category": "date",
+        "eloquent": 87,
+        "description": "find difference in flag time period (by default days) between today and date in past or future. lock is a integer limit of inside date iterations to compare with date.",
+        "args": [
+            {
+                "name": "date",
+                "type": "string"
+            },
+            {
+                "name": "flag",
+                "type": "string"
+            },
+            {
+                "name": "lock",
+                "type": "number"
+            }
+        ],
+        "examples": [
+            {
+                "input": "If today is 29.10.2024, I call datus.difference('04.11.2024', 'day')",
+                "output": "4"
+            }
+        ],
+        "tags": ["date", "difference", "calendar"],
+        "size": 18
+    },
+    {
+        "title": "day",
+        "category": "date",
+        "eloquent": 81,
+        "description": "returned number of hours/minutes/seconds after day starts (*key* = 'start') or until its end (*key* = 'end').",
+        "args": [
+            {
+                "name": "key",
+                "type": "string"
+            },
+            {
+                "name": "size",
+                "type": "string"
+            }
+        ],
+        "examples": [
+            {
+                "input": "If today is tuesday 19:39 31.10.2024, I call datus.day()",
+                "output": "19"
+            }
+        ],
+        "tags": ["date", "day", "calendar"],
+        "size": 11
+    },
+    {
+        "title": "range",
+        "category": "date",
+        "eloquent": 92,
+        "description": "returned difference between smallest and largest integer value of date's period ('day', 'month' or 'year') in array of unsorted dates.",
+        "args": [
+            {
+                "name": "dates",
+                "type": "string[]"
+            },
+            {
+                "name": "period",
+                "type": "string"
+            }
+        ],
+        "examples": [
+            {
+                "input": "If I call datus.range(['12.06.2021', '17.09.2005'])",
+                "output": "5"
+            }
+        ],
+        "tags": ["date", "array", "calendar"],
+        "size": 23
+    },
+    {
+        "title": "now",
+        "category": "date",
+        "eloquent": 89,
+        "description": "returns current date or time and divides it by second parameter",
+        "args": [
+            {
+                "name": "format",
+                "type": "string"
+            },
+            {
+                "name": "divider",
+                "type": "string"
+            }
+        ],
+        "examples": [
+            {
+                "input": "If today is 29.10.2024, I call datus.now('date')",
+                "output": "'29.10.2024'"
+            }
+        ],
+        "tags": ["date", "time", "calendar"],
+        "size": 11
+    },
+    {
+        "title": "pointer",
+        "category": "date",
+        "eloquent": 71,
+        "description": "formatting and returns date with word-pointer",
+        "args": [
+            {
+                "name": "text",
+                "type": "string"
+            }
+        ],
+        "examples": [
+            {
+                "input": "If todays is 04.07.2021 I call datus.pointer('tomorrow')",
+                "output": "'05.07.2021'"
+            }
+        ],
+        "tags": ["date", "word", "text", "calendar"],
+        "size": 15
+    },
+    {
+        "title": "dateDistance",
+        "category": "date",
+        "eloquent": 85,
+        "description": "counts difference between 2 dates in *size* and returns it",
+        "args": [
+            {
+                "name": "start",
+                "type": "string"
+            },
+            {
+                "name": "end",
+                "type": "string"
+            },
+            {
+                "name": "size",
+                "type": "string"
+            }
+        ],
+        "examples": [
+            {
+                "input": "If I call datus.dateDistance('01.01.1998', '19.05.2007', 'month')",
+                "output": "115"
+            }
+        ],
+        "tags": ["date", "difference", "calendar"],
+        "size": 37
+    },
+    {
+        "title": "deadlineOfMonth",
+        "category": "date",
+        "eloquent": 69,
+        "description": "returns deadline which counted by *percent* of date's month size.",
+        "args": [
+            {
+                "name": "date",
+                "type": "string"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [
+            {
+                "input": "If I call datus.deadlineOfMonth('19.05.2007', 1e1), return days as 19 + 10% from May size (31)",
+                "output": "22"
+            }
+        ],
+        "tags": ["date", "month", "calendar"],
+        "size": 5
+    },
+    {
+        "title": "percentOfMonth",
+        "category": "date",
+        "eloquent": 83,
+        "description": "returns % of remaining days of date's month by *period* and *num*",
+        "args": [
+            {
+                "name": "date",
+                "type": "string"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "period",
+                "type": "string"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [
+            {
+                "input": "If I call datus.percentOfMonth('12.10.2023', 15), result = 15 days as % of (31 - 12) month residue",
+                "output": "79"
+            }
+        ],
+        "tags": ["date", "percent", "month", "calendar"],
+        "size": 10
+    }
+]

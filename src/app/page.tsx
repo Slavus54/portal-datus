@@ -1,95 +1,71 @@
+'use client'
+import {useLayoutEffect} from "react";
+
+import Layout from "@/components/Layout";
 import Image from "next/image";
-import styles from "./page.module.css";
+
+import {onGetStorageValue, onInitStatistics, onInitCodeUsing, onGetLocationData} from '@/store/store'
+import {STORE_VISIT_KEY, STORE_STATS_KEY, STORE_CODE_KEY, STORE_SESSION_DISTANCE_KEY, STORE_LOCATION_KEY, LINKS, IMPORT_TEXT} from '@/env/env'
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  const visit = onGetStorageValue(STORE_VISIT_KEY)
+  const code = onGetStorageValue(STORE_CODE_KEY) || 0
+  const session = onGetStorageValue(STORE_SESSION_DISTANCE_KEY)
+  const location = onGetStorageValue(STORE_LOCATION_KEY)
+
+  useLayoutEffect(() => {
+    let data = onGetStorageValue(STORE_STATS_KEY)
+    let code = onGetStorageValue(STORE_CODE_KEY)
+   
+    if (data === null) {
+      onInitStatistics()
+    } 
+
+    if (code === null) {
+      onInitCodeUsing()
+    }
+
+    if (location === null) {
+      onGetLocationData()
+    }
+  }, [])
+
+  const onNavigate = (url: string) => {
+    window.open(url)
+  }
+
+  return (
+    <Layout>
+      <h2>Datus.JS - light and powerful library to work with dates</h2>
+
+      <h2>About</h2>
+
+      <p>JavaScript library to handling, parsing, validation and formatting date or time.</p>
+
+      <div className="items vertical">
+        <h3 className="dot">* Stable Version: <span className="italic">1.8.7</span></h3>
+        <h3 className="dot">* Size ~ <span className="italic">150 kB</span> and <span className="italic">3.9K</span> lines of code with <span className="italic">245 methods</span></h3>
+      </div>
+
+      <Image src='/js.png' alt='' width={96} height={96} />
+
+      <h2>Links</h2>
+
+      <div className="items small">
+        {LINKS.map(el => <img onClick={() => onNavigate(el.url)} src={el.icon} className="icon" />)}
+      </div>
+
+      <h2>Getting Started</h2>
+
+      <p>{IMPORT_TEXT}</p>
+
+      {visit !== null && code !== null && session !== null && location !== null &&
+        <div className="info">
+          <p className="pale">Latest visit: {visit} from {location.city}, {location.country} ({session})</p>
+          <b>You saved {code} lines of code</b>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      }
+    </Layout>
   );
 }
