@@ -1,8 +1,8 @@
+'use client'
+
 import React, {useState, useMemo} from "react"
 //@ts-ignore
-import {Datus} from 'datus.js'
 import {onRunMethod} from '@/engine/engine'
-import {onImproveStatitics, onUpdateCodeUsing} from '@/store/store'
 import {MethodRunProps, MethodArgumentType} from '@/env/types'
 
 const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size = 0}) => {
@@ -14,8 +14,6 @@ const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size =
 
     const [result, setResult] = useState<any | null>(null)
 
-    const datus = new Datus()
-    
     useMemo(() => {
         setArgument(args[index])
     }, [index])
@@ -34,14 +32,11 @@ const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size =
             setIndex(index + 1)
         } else if (index === args.length - 1) {
             setResult(JSON.parse(onRunMethod(title, data)))
-        
-            onImproveStatitics(title, category, data, datus.now())
-            onUpdateCodeUsing(size)
         }
        
         if (index === args.length - 2) {
             setIsAllArgsExist(true)
-        } 
+        }
     }
     
     return (

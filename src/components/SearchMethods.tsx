@@ -1,21 +1,25 @@
-import React, {useState, useMemo, useLayoutEffect} from "react"
+'use client'
+
+import React, {useState, useMemo, useEffect} from "react"
 
 import methods from '@/api/methods.json'
 
-import {onGetStorageValue, onInitMethodsReview} from '@/store/store'
-import {METHOD_TYPES, STORE_REVIEWS_KEY} from "@/env/env"
+import {METHOD_TYPES, STORE_REVIEWS_KEY, STORE_REVIEW_DEFAULT_RATE} from "@/env/env"
 import {MethodSearchProps} from '@/env/types'
 
 const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, filtered, setFiltered}) => {
     const [category, setCategory] = useState<string>(METHOD_TYPES[0])
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setFiltered(methods)
 
-        let data = onGetStorageValue(STORE_REVIEWS_KEY)
+        const onInitMethodsReview = (length: number) => localStorage.setItem(STORE_REVIEWS_KEY, JSON.stringify(new Array(length).fill({title: '', rate: STORE_REVIEW_DEFAULT_RATE})))
+        let data: any = localStorage.getItem(STORE_REVIEWS_KEY)
+
+        data = JSON.parse(data)
 
         if (data === null) {
-            onInitMethodsReview()
+            onInitMethodsReview(methods.length)
         }
 
     }, [])

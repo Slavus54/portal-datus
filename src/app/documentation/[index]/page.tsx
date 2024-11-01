@@ -1,15 +1,12 @@
 'use client'
 
 import {useParams, useRouter} from "next/navigation"
-import {useState, useLayoutEffect} from "react"
+import {useState, useEffect} from "react"
 
 import MethodRun from "@/components/MethodRun"
 
 import methods from '@/api/methods.json' 
-
-import {onGetStorageValue, onUpdateMethodReview} from '@/store/store'
 import {STORE_REVIEWS_KEY, STORE_REVIEW_DEFAULT_RATE} from '@/env/env'
-
 
 const MethodPage = () => {
     const {push} = useRouter()
@@ -18,19 +15,39 @@ const MethodPage = () => {
     const [method] = useState(methods[Number(params.index)])
     const [rate, setRate] = useState<number>(STORE_REVIEW_DEFAULT_RATE)
 
-    useLayoutEffect(() => {
-        let data = onGetStorageValue(STORE_REVIEWS_KEY)
+    let onUpdateMethodReview: any
 
+    useEffect(() => {
+        let data: any = localStorage.getItem(STORE_REVIEWS_KEY)
+       
         if (data) {
-            let result = data[Number(params.index)]
+            data = JSON.parse(data)
 
+            let result: any = data[Number(params.index)]
+ 
             if (result !== undefined) {
                 setRate(result.rate)
             }
         }
     }, [])
 
-    const onRate = () => onUpdateMethodReview(method.title, rate, Number(params.index))
+    useEffect(() => {
+        onUpdateMethodReview = (title = '', rate = STORE_REVIEW_DEFAULT_RATE, index = 0) => {
+            let data: any = localStorage.getItem(STORE_REVIEWS_KEY)
+        
+            data = JSON.parse(data)
+
+            if (data) {
+                data[index] = {title, rate}
+        
+                localStorage.setItem(STORE_REVIEWS_KEY, JSON.stringify(data))
+            }
+        }
+
+        if (rate !== STORE_REVIEW_DEFAULT_RATE) {
+            onUpdateMethodReview(method.title, rate, Number(params.index))
+        }        
+    }, [rate])
 
     return (
         <div className="main">
@@ -41,8 +58,6 @@ const MethodPage = () => {
 
             <h2>Rate: {rate}%</h2>
             <input value={rate} onChange={e => setRate(parseInt(e.target.value))} type="range" step={1} />
-
-            <button onClick={onRate}>Update</button>
 
             <h2>Examples</h2>
 

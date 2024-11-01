@@ -1,13 +1,13 @@
 'use client'
 
-import {useState, useLayoutEffect} from "react"
+import {useState, useEffect} from "react"
 //@ts-ignore
 import {Datus} from 'datus.js'
 import Link from "next/link"
 
 import Layout from "@/components/Layout"
 import SearchMethods from "@/components/SearchMethods"
-import {onInitVisit} from '@/store/store'
+import {STORE_VISIT_KEY} from "@/env/env"
 
 const Documentation = () => {
     const [filtered, setFiltered] = useState<any[]>([])
@@ -15,7 +15,9 @@ const Documentation = () => {
 
     const datus = new Datus()
 
-    useLayoutEffect(() => {
+    useEffect(() => {
+        const onInitVisit = (dateUp = '') => localStorage.setItem(STORE_VISIT_KEY, JSON.stringify(dateUp))
+
         onInitVisit(datus.now())
     }, [])
 

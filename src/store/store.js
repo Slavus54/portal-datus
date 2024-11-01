@@ -3,13 +3,15 @@
 import {Datus} from 'datus.js'
 import {STORE_VISIT_KEY, STORE_SESSION_DISTANCE_KEY, STORE_STATS_KEY, STORE_STATS_LIMIT, STORE_REVIEWS_KEY, STORE_REVIEW_DEFAULT_RATE, STORE_CODE_KEY, STORE_LOCATION_KEY, LOCATION_URL} from '../env/env'
 
-const datus = new Datus()
+export const datus = new Datus()
 
-export const onGetStorageValue = (title = '', value = null) => localStorage.getItem(title) !== null ? JSON.parse(localStorage.getItem(title)) : value
+// localstorage functions, which cannot be running in Next.js 
 
-export const onInitVisit = (dateUp = '') => localStorage.setItem(STORE_VISIT_KEY, JSON.stringify(dateUp))
+const onGetStorageValue = (title = '', value = null) => localStorage.getItem(title) !== null ? JSON.parse(localStorage.getItem(title)) : value
 
-export const onCountSessionDistance = () => {
+const onInitVisit = (dateUp = '') => localStorage.setItem(STORE_VISIT_KEY, JSON.stringify(dateUp))
+
+const onCountSessionDistance = () => {
     let from = onGetStorageValue(STORE_VISIT_KEY)
     let to = datus.now('time')
   
@@ -22,9 +24,9 @@ export const onCountSessionDistance = () => {
     localStorage.setItem(STORE_SESSION_DISTANCE_KEY, JSON.stringify(distance))
 }
 
-export const onInitStatistics = () => localStorage.setItem(STORE_STATS_KEY, JSON.stringify([]))
+const onInitStatistics = () => localStorage.setItem(STORE_STATS_KEY, JSON.stringify([]))
 
-export const onImproveStatitics = (method = '', category = 'date', args = [], timestamp = '') => {
+const onImproveStatitics = (method = '', category = 'date', args = [], timestamp = '') => {
     let items = onGetStorageValue(STORE_STATS_KEY)
 
     if (items) {
@@ -34,9 +36,9 @@ export const onImproveStatitics = (method = '', category = 'date', args = [], ti
     }
 }
 
-export const onInitMethodsReview = length => localStorage.setItem(STORE_REVIEWS_KEY, JSON.stringify(new Array(length).fill({title: '', rate: STORE_REVIEW_DEFAULT_RATE})))
+const onInitMethodsReview = length => localStorage.setItem(STORE_REVIEWS_KEY, JSON.stringify(new Array(length).fill({title: '', rate: STORE_REVIEW_DEFAULT_RATE})))
 
-export const onUpdateMethodReview = (title = '', rate = STORE_REVIEW_DEFAULT_RATE, index = 0) => {
+const onUpdateMethodReview = (title = '', rate = STORE_REVIEW_DEFAULT_RATE, index = 0) => {
     let data = onGetStorageValue(STORE_REVIEWS_KEY)
 
     if (data) {
@@ -46,9 +48,9 @@ export const onUpdateMethodReview = (title = '', rate = STORE_REVIEW_DEFAULT_RAT
     }
 }
 
-export const onInitCodeUsing = () => localStorage.setItem(STORE_CODE_KEY, JSON.stringify(0))
+const onInitCodeUsing = () => localStorage.setItem(STORE_CODE_KEY, JSON.stringify(0))
 
-export const onUpdateCodeUsing = size => {
+const onUpdateCodeUsing = size => {
     let data = onGetStorageValue(STORE_CODE_KEY)
 
     if (data !== null) {
@@ -58,7 +60,7 @@ export const onUpdateCodeUsing = size => {
     }
 }
 
-export const onGetLocationData = async () => {
+const onGetLocationData = async () => {
     let data = await fetch(LOCATION_URL)
 
     data = await data.json()
