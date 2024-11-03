@@ -13,15 +13,13 @@ const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, filtered, 
     useEffect(() => {
         setFiltered(methods)
 
-        const onInitMethodsReview = (length: number) => localStorage.setItem(STORE_REVIEWS_KEY, JSON.stringify(new Array(length).fill({title: '', rate: STORE_REVIEW_DEFAULT_RATE})))
         let data: any = localStorage.getItem(STORE_REVIEWS_KEY)
 
         data = JSON.parse(data)
 
         if (data === null) {
-            onInitMethodsReview(methods.length)
+            localStorage.setItem(STORE_REVIEWS_KEY, JSON.stringify(new Array(methods.length).fill({title: '', rate: STORE_REVIEW_DEFAULT_RATE})))
         }
-
     }, [])
 
     useMemo(() => {
