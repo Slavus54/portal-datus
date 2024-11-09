@@ -2,7 +2,6 @@
     {
         "title": "move",
         "category": "date",
-        "eloquent": 95,
         "description": "run through the calendar in all directions, return date.",
         "args": [
             {
@@ -30,7 +29,6 @@
     {
         "title": "dates",
         "category": "date",
-        "eloquent": 73,
         "description": "create an array of dates since weekday (today by default) with time period iterations by flag ('day', 'week' or 'month'). num is a number of dates.",
         "args": [
             {
@@ -58,7 +56,6 @@
     {
         "title": "difference",
         "category": "date",
-        "eloquent": 87,
         "description": "find difference in flag time period (by default days) between today and date in past or future. lock is a integer limit of inside date iterations to compare with date.",
         "args": [
             {
@@ -86,7 +83,6 @@
     {
         "title": "day",
         "category": "date",
-        "eloquent": 81,
         "description": "returned number of hours/minutes/seconds after day starts (*key* = 'start') or until its end (*key* = 'end').",
         "args": [
             {
@@ -110,7 +106,6 @@
     {
         "title": "range",
         "category": "date",
-        "eloquent": 92,
         "description": "returned difference between smallest and largest integer value of date's period ('day', 'month' or 'year') in array of unsorted dates.",
         "args": [
             {
@@ -134,7 +129,6 @@
     {
         "title": "now",
         "category": "date",
-        "eloquent": 89,
         "description": "returns current date or time and divides it by second parameter",
         "args": [
             {
@@ -158,7 +152,6 @@
     {
         "title": "pointer",
         "category": "date",
-        "eloquent": 71,
         "description": "formatting and returns date with word-pointer",
         "args": [
             {
@@ -178,7 +171,6 @@
     {
         "title": "dateDistance",
         "category": "date",
-        "eloquent": 85,
         "description": "counts difference between 2 dates in *size* and returns it",
         "args": [
             {
@@ -206,7 +198,6 @@
     {
         "title": "deadlineOfMonth",
         "category": "date",
-        "eloquent": 69,
         "description": "returns deadline which counted by *percent* of date's month size.",
         "args": [
             {
@@ -234,7 +225,6 @@
     {
         "title": "percentOfMonth",
         "category": "date",
-        "eloquent": 83,
         "description": "returns % of remaining days of date's month by *period* and *num*",
         "args": [
             {
@@ -262,5 +252,205 @@
         ],
         "tags": ["date", "percent", "month", "calendar"],
         "size": 10
+    },
+    {
+        "title": "monthDayBorder",
+        "category": "date",
+        "description": "checks days by parameter *num* if it less or equal to days before month end and returns true/false",
+        "args": [
+            {
+                "name": "date",
+                "type": "string"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "percent", "month", "calendar"],
+        "size": 5
+    },
+    {
+        "title": "dateByPercent",
+        "category": "date",
+        "description": "returns date by % with year *num*",
+        "args": [
+            {
+                "name": "percent",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "percent", "month", "calendar"],
+        "size": 20
+    },
+    {
+        "title": "randomDates",
+        "category": "date",
+        "description": "generates list of passed/future dates by parameters",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "border",
+                "type": "number"
+            },
+            {
+                "name": "isPassed",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "list", "month", "calendar"],
+        "size": 9
+    },
+    {
+        "title": "monthAllocation",
+        "category": "date",
+        "description": "builds list of dates by month's title, year and step of allocation",
+        "args": [
+            {
+                "name": "title",
+                "type": "string"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "year",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "month", "calendar"],
+        "size": 13
+    },
+    {
+        "title": "decadesMonthAllocation",
+        "category": "date",
+        "description": "builds an array of dates with month's decades by number of days in each one",
+        "args": [
+            {
+                "name": "days",
+                "type": "string[]"
+            },
+            {
+                "name": "title",
+                "type": "string"
+            },
+            {
+                "name": "year",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "percent", "month", "calendar"],
+        "size": 18
+    },
+    {
+        "title": "dateValue",
+        "category": "date",
+        "description": "returns days of date since beginning of year",
+        "args": [
+            {
+                "name": "date",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "percent", "month", "calendar"],
+        "size": 15
+    },
+    {
+        "title": "dateByParameters",
+        "category": "date",
+        "description": "returns accurately randomly generated date by a lot of parameters.",
+        "args": [
+            {
+                "name": "dayBorders",
+                "type": "number[]"
+            },
+            {
+                "name": "monthBorders",
+                "type": "number[]"
+            },
+            {
+                "name": "century",
+                "type": "number"
+            },
+            {
+                "name": "decade",
+                "type": "number"
+            }]
+        ,
+        "examples": [],
+        "tags": ["date", "percent", "month", "calendar"],
+        "size": 11
+    },
+    {
+        "title": "monthDatesByWeekday",
+        "category": "date",
+        "description": "returns list of dates by *weekday* and month of *date*",
+        "args": [
+            {
+                "name": "date",
+                "type": "string"
+            },
+            {
+                "name": "weekday",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "percent", "month", "calendar"],
+        "size": 23
+    },
+    {
+        "title": "dateByYearWeek",
+        "category": "date",
+        "description": "returns date by *num* of weeks of the *year*",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "percent", "month", "calendar"],
+        "size": 19
+    },
+    {
+        "title": "monthDatesByStep",
+        "category": "date",
+        "description": "generates list of dates since *date* with *step* in days throughout the whole date's month",
+        "args": [
+            {
+                "name": "date",
+                "type": "string"
+            },
+            {
+                "name": "step",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "percent", "month", "calendar"],
+        "size": 15
     }
 ]

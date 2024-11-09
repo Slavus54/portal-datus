@@ -51,8 +51,8 @@ export default function Home() {
       <p>JavaScript library to handling, parsing, validation and formatting date or time.</p>
 
       <div className="items vertical">
-        <h3 className="dot">* Stable Version: <span className="italic">1.8.7</span></h3>
-        <h3 className="dot">* Size ~ <span className="italic">160 kB</span> and <span className="italic">4.1K</span> lines of code with <span className="italic">250 methods</span></h3>
+        <h3 className="dot">* Stable Version: <span className="italic">1.9.1</span></h3>
+        <h3 className="dot">* Size ~ <span className="italic">175 kB</span> and <span className="italic">4.5K</span> lines of code with <span className="italic">275 methods</span></h3>
       </div>
 
       <Image src='/js.png' alt='' width={96} height={96} />
