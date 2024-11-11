@@ -52,7 +52,7 @@ export default function Home() {
 
       <div className="items vertical">
         <h3 className="dot">* Stable Version: <span className="italic">1.9.1</span></h3>
-        <h3 className="dot">* Size ~ <span className="italic">175 kB</span> and <span className="italic">4.5K</span> lines of code with <span className="italic">275 methods</span></h3>
+        <h3 className="dot">* Size ~ <span className="italic">175 kB</span> and <span className="italic">4.4K</span> lines of code with <span className="italic">275 methods</span></h3>
       </div>
 
       <Image src='/js.png' alt='' width={96} height={96} />

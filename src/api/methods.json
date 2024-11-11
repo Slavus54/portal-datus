@@ -452,5 +452,111 @@
         "examples": [],
         "tags": ["date", "percent", "month", "calendar"],
         "size": 15
+    },
+    {
+        "title": "dateByDays",
+        "category": "date",
+        "description": "builds date by *value* od dates and *year*",
+        "args": [
+            {
+                "name": "value",
+                "type": "number"
+            },
+            {
+                "name": "year",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "days", "month", "calendar"],
+        "size": 20
+    },
+    {
+        "title": "dateByNum",
+        "category": "date",
+        "description": "generates date from *num* of year with fractional part",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "days", "month", "calendar"],
+        "size": 5
+    },
+    {
+        "title": "filterDatesByMonthGap",
+        "category": "date",
+        "description": "filter days of year's month inside borders and returns list of dates",
+        "args": [
+            {
+                "name": "dates",
+                "type": "string[]"
+            },
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["date", "days", "month", "calendar"],
+        "size": 19
+    },
+    {
+        "title": "time",
+        "category": "time",
+        "description": "received *value* in minutes and convert it to HH:MM format, or if *key* equal 'deconvert' it returned number of minutes. Flag *isTwelve* is for US time format",
+        "args": [
+            {
+                "name": "value",
+                "type": "string"
+            },
+            {
+                "name": "key",
+                "type": "string"
+            },
+            {
+                "name": "isTwelve",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 19
+    },
+    {
+        "title": "times",
+        "category": "time",
+        "description": "returned array of timestamps in HH:MM format beginning from *start* time with *period* in minutes, *num* - size of array.",
+        "args": [
+            {
+                "name": "start",
+                "type": "string"
+            },
+            {
+                "name": "period",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 18
     }
 ]
