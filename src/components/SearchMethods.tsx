@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState, useMemo, useEffect} from "react"
+import React, {useState, useEffect} from "react"
 
 import methods from '@/api/methods.json'
 
@@ -22,7 +22,7 @@ const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, filtered, 
         }
     }, [])
 
-    useMemo(() => {
+    useEffect(() => {
         let result: any[] = methods.filter(el => el.category === category)
 
         if (value.length !== 0) {
@@ -36,10 +36,10 @@ const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, filtered, 
         <>
             <input value={value} onChange={e => setValue(e.target.value)} placeholder="Enter title of method" type="text" />
         
-            <h3 className="pale">Choose Type</h3>
+            <h4 className="pale">Choose Type</h4>
 
             <div className="items small">
-                {METHOD_TYPES.map(el => <div onClick={() => setCategory(el)} className="label">{el}</div>)}
+                {METHOD_TYPES.map(el => <div onClick={() => setCategory(el)} className={el === category ? "label chosen" : "label"}>{el}</div>)}
             </div>
 
             <b>{filtered.length} method{filtered.length > 1 ? 's' : ''} found</b>

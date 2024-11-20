@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 
 body {
-    font-family: "Forum", serif;
+	font-family: "Geist Mono", monospace;
 	text-align: center;
 	overflow-x: hidden;
 	padding: 0;
@@ -32,7 +32,7 @@ h4, h5 {
 }
 
 p {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	color: #1c1c1e;
 	margin: .5rem;
 	line-height: 1.5rem;
@@ -130,7 +130,7 @@ button {
 	align-items: center;
 	width: 6rem;
 	color: #000000;
-	background: #bae1ff;
+	background: #ffe641;
 	max-height: 3rem;
 	font-size: .9rem;
 	font-weight: 700;
@@ -140,15 +140,10 @@ button {
 	margin: 1rem;
 	letter-spacing: .1rem;
 	border-radius: .25rem;
-	transition: .1s ease-in-out;
 	border: none;
   	overflow: hidden;
 	user-select: none;
 	cursor: pointer;
-}
-
-button:hover {
-	background:#abd5f5;
 }
 
 input[type=text] {
@@ -156,7 +151,7 @@ input[type=text] {
 	position: relative;
 	justify-content: center;
 	align-items: center;
-	font-size: .8rem;
+	font-size: .85rem;
 	font-weight: 200;
 	background-color: inherit;
 	border: none;
@@ -216,16 +211,16 @@ nav {
     display: flex;
     flex-direction: row;
 	flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-around left;
 	width: 80%;
 	margin: .5rem;
 }
 
 .info {
 	cursor: pointer;
-	border-radius: .5rem;
+	border-radius: 1rem;
 	box-shadow: 0px 0px 3px .25px #cccccc;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	padding: 1.5rem 3rem;
 	margin: 1rem;
 }
@@ -235,31 +230,43 @@ nav {
 }
 
 .card {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	flex-direction: column;
 	text-decoration: none;
-	font-size: 1.2rem;
-	font-weight: 900;
+	font-size: .8rem;
+	font-weight: 200;
 	color: #181C1F;
 	background-color: inherit;
-	box-shadow: 0px 0px 3px .5px #abd5f5;
-	border-radius: 1rem;
-	width: max(10%, 10rem);
-	padding: 2.5rem 4rem;
-	margin: .5rem;
+	box-shadow: 0px 0px 3px .25px #cccccc;
+	border-radius: .25rem;
+	width: max(10%, 12.5rem);
+	padding: 1.5rem 3rem;
+	margin: .3rem;
 	cursor: pointer;
 	transition: .1s ease-in-out;
 }
 
 .card:hover {
-	box-shadow: 0px 0px 3px 1px #8fc7f1;
+	box-shadow: 0px 0px 3px .5px #bebebe;
 }
 
 .label {
+	font-size: .8rem;
 	color:#000000;
 	background-color: #f0db4f;
 	border-radius: .25rem;
 	padding: .5rem 1rem;
 	cursor: pointer;
 	margin: 1rem;
+}
+
+.chosen {
+	background-color: inherit;
+	box-shadow: 0px 0px 3px .25px #cccccc;
 }
 
 .light, .light:hover {

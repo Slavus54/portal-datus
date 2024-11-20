@@ -30,9 +30,9 @@ const Documentation = () => {
             <div className="items">
                 {filtered.map((el, idx) => 
                     <Link href={`/documentation/${idx}`} key={idx} className="card">
-                        {el.title}()<br />
+                        <b>{el.title}()</b> <br />
     
-                        <small>{el.size} lines of code</small>                     
+                        <small>{el.size} lines</small>                     
                     </Link>
                 )}
             </div>

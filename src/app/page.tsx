@@ -45,14 +45,13 @@ export default function Home() {
   return (
     <Layout>
       <h2>Datus.JS - light and powerful library to work with dates</h2>
-
       <h2>About</h2>
 
       <p>JavaScript library to handling, parsing, validation and formatting date or time.</p>
 
       <div className="items vertical">
-        <h3 className="dot">* Stable Version: <span className="italic">1.9.1</span></h3>
-        <h3 className="dot">* Size ~ <span className="italic">175 kB</span> and <span className="italic">4.4K</span> lines of code with <span className="italic">275 methods</span></h3>
+        <h4 className="dot">* Stable Version: <span className="italic">1.9.4</span></h4>
+        <h4 className="dot">* Size ~ <span className="italic">190 kB</span> and <span className="italic">4.6K</span> lines of code with <span className="italic">285 methods</span></h4>
       </div>
 
       <Image src='/js.png' alt='' width={96} height={96} />
@@ -69,8 +68,8 @@ export default function Home() {
 
       {state !== null &&
         <div className='info'>
-            Visit: {state.visit} <br />
-            Location: {state.city}, {state.country}
+            Latest Visit: {state.visit} <br />
+            Geolocation: {state.city}, {state.country}
         </div>
       }
     </Layout>
