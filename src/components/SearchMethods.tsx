@@ -7,9 +7,7 @@ import methods from '@/api/methods.json'
 import {METHOD_TYPES, STORE_REVIEWS_KEY, STORE_REVIEW_DEFAULT_RATE} from "@/env/env"
 import {MethodSearchProps} from '@/env/types'
 
-const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, filtered, setFiltered}) => {
-    const [category, setCategory] = useState<string>(METHOD_TYPES[0])
-
+const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, category, setCategory, filtered, setFiltered}) => {
     useEffect(() => {
         setFiltered(methods)
 
@@ -20,6 +18,8 @@ const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, filtered, 
         if (data === null) {
             localStorage.setItem(STORE_REVIEWS_KEY, JSON.stringify(new Array(methods.length).fill({title: '', rate: STORE_REVIEW_DEFAULT_RATE})))
         }
+
+        setCategory(METHOD_TYPES[0])
     }, [])
 
     useEffect(() => {
@@ -42,7 +42,7 @@ const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, filtered, 
                 {METHOD_TYPES.map(el => <div onClick={() => setCategory(el)} className={el === category ? "label chosen" : "label"}>{el}</div>)}
             </div>
 
-            <b>{filtered.length} method{filtered.length > 1 ? 's' : ''} found</b>
+            <h4>{filtered.length}/100 method{filtered.length > 1 ? 's' : ''} found</h4>
         </>
     )
 }

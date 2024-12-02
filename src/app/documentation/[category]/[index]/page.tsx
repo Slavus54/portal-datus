@@ -10,9 +10,9 @@ import {STORE_REVIEWS_KEY, STORE_REVIEW_DEFAULT_RATE} from '@/env/env'
 
 const MethodPage = () => {
     const {push} = useRouter()
-    const params = useParams<{index: string}>()
+    const params = useParams<{category: string, index: string}>()
 
-    const [method] = useState(methods[Number(params.index)])
+    const [method] = useState(methods.filter(el => el.category === params.category)[Number(params.index)])
     const [rate, setRate] = useState<number>(STORE_REVIEW_DEFAULT_RATE)
 
     let onUpdateMethodReview: any
@@ -63,14 +63,14 @@ const MethodPage = () => {
 
             <div className="items">
                 {method.examples.map(el => 
-                    <div>
+                    <div className="item">
                         <p>Input: {el.input}</p> <br />
                         <h4>Output: <b>{el.output}</b></h4>
                     </div>
                 )}
             </div>
 
-            <button onClick={() => push('/documentation')} className="light">Back</button>
+            <button onClick={() => push('/documentation')} className="light">Back to methods</button>
         </div>
     )
 }

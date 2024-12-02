@@ -7,15 +7,18 @@ import Link from "next/link"
 
 import Layout from "@/components/Layout"
 import SearchMethods from "@/components/SearchMethods"
-import {STORE_VISIT_KEY} from "@/env/env"
+import {short, STORE_VISIT_KEY} from "@/env/env"
 
 const Documentation = () => {
     const [filtered, setFiltered] = useState<any[]>([])
+    const [category, setCategory] = useState<string>('')
     const [value, setValue] = useState<string>('')
 
     const datus = new Datus()
 
     useEffect(() => {
+        window.document.title = 'Methods | Datus.js'
+
         const onInitVisit = (dateUp = '') => localStorage.setItem(STORE_VISIT_KEY, JSON.stringify(dateUp))
 
         onInitVisit(datus.now())
@@ -23,14 +26,14 @@ const Documentation = () => {
 
     return (
         <Layout>
-            <h2>Documentation</h2>
+            <h2>Methods of library to try</h2>
 
-            <SearchMethods value={value} setValue={setValue} filtered={filtered} setFiltered={setFiltered} />
+            <SearchMethods value={value} setValue={setValue} category={category} setCategory={setCategory} filtered={filtered} setFiltered={setFiltered} />
 
-            <div className="items">
+            <div className="items medium">
                 {filtered.map((el, idx) => 
-                    <Link href={`/documentation/${idx}`} key={idx} className="card">
-                        <b>{el.title}()</b> <br />
+                    <Link href={`/documentation/${category}/${idx}`} key={idx} className="card">
+                        <b>{short(el.title)}()</b> <br />
     
                         <small>{el.size} lines</small>                     
                     </Link>

@@ -33,7 +33,7 @@ export default function Home() {
       visit = JSON.parse(visit)
 
       if (visit !== null) {
-        setState({city: data.city, country: data.country, visit})
+        setState({city: data.city, continent: data.continent, country: data.country, visit})
       }      
     }
   }, [])
@@ -50,8 +50,8 @@ export default function Home() {
       <p>JavaScript library to handling, parsing, validation and formatting date or time.</p>
 
       <div className="items vertical">
-        <h4 className="dot">* Stable Version: <span className="italic">1.9.4</span></h4>
-        <h4 className="dot">* Size ~ <span className="italic">190 kB</span> and <span className="italic">4.6K</span> lines of code with <span className="italic">285 methods</span></h4>
+        <h4 className="dot">* Stable Version: <span className="italic">1.9.8</span></h4>
+        <h4 className="dot">* Size ~ <span className="italic">195 kB</span> and <span className="italic">4.9K</span> lines of code with <span className="italic">100/310 methods</span></h4>
       </div>
 
       <Image src='/js.png' alt='' width={96} height={96} />
@@ -69,7 +69,7 @@ export default function Home() {
       {state !== null &&
         <div className='info'>
             Latest Visit: {state.visit} <br />
-            Geolocation: {state.city}, {state.country}
+            Geolocation: {state.city}, {state.country} ({state.continent})
         </div>
       }
     </Layout>

@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Portal | Datus.js",
+  title: "Home | Datus.js",
   description: "Datus.js portal with docs on Next.js",
   authors: [
     {name: 'Slavus54'}

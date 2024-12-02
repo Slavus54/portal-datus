@@ -24,7 +24,8 @@ h3, h4, h5 {
 }
 
 h1, h2 {
-	margin: 1rem;
+	font-weight: 600;
+	margin: 1.25rem;
 }
 
 h4, h5 {
@@ -37,10 +38,11 @@ p {
 	margin: .5rem;
 	line-height: 1.5rem;
 	text-align: center;
+	width: 90%;
 }
 
 b {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 }
 
 img {
@@ -82,7 +84,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 small {
-	font-size: .8rem;
+	font-size: .9rem;
 	font-weight: 300;
 	margin: 1.5rem;
 }
@@ -132,11 +134,11 @@ button {
 	color: #000000;
 	background: #ffe641;
 	max-height: 3rem;
-	font-size: .9rem;
+	font-size: .95rem;
 	font-weight: 700;
 	box-shadow: 0px 0px 2px 1px #cfd2d4;
 	text-shadow: 0px 0px 1px #1c3b42;
-	padding: 1rem 1.25rem;
+	padding: 1rem 2rem;
 	margin: 1rem;
 	letter-spacing: .1rem;
 	border-radius: .25rem;
@@ -211,9 +213,13 @@ nav {
     display: flex;
     flex-direction: row;
 	flex-wrap: wrap;
-    justify-content: space-around left;
+    justify-content: space-around;
 	width: 80%;
 	margin: .5rem;
+}
+
+.medium {
+	justify-content: left;
 }
 
 .info {
@@ -237,7 +243,7 @@ nav {
 	align-items: center;
 	flex-direction: column;
 	text-decoration: none;
-	font-size: .8rem;
+	font-size: .7rem;
 	font-weight: 200;
 	color: #181C1F;
 	background-color: inherit;
@@ -255,13 +261,19 @@ nav {
 }
 
 .label {
-	font-size: .8rem;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	font-size: .85rem;
 	color:#000000;
 	background-color: #f0db4f;
 	border-radius: .25rem;
-	padding: .5rem 1rem;
+	width: 5rem;
+	height: 2.25rem;
 	cursor: pointer;
-	margin: 1rem;
+	margin: 1rem 0rem 2.75rem 0rem;
 }
 
 .chosen {
@@ -270,9 +282,13 @@ nav {
 }
 
 .light, .light:hover {
-	font-size: .75rem;
-	width: 4rem;
-	color: #000000;
+	text-shadow: none;
+	position: fixed;
+	font-weight: 300;
+	bottom: 0;
+	box-shadow: none;
+	font-size: .9rem;
+	width: 16rem;
 	background: inherit;
 }
 

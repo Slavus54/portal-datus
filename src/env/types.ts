@@ -13,6 +13,8 @@ export type MethodRunProps = {
 export type MethodSearchProps = {
     value: string
     setValue: any
+    category: string
+    setCategory: any
     filtered: any[]
     setFiltered: any
 }

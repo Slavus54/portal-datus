@@ -558,5 +558,1483 @@
         "examples": [],
         "tags": ["time"],
         "size": 18
+    },
+    {
+        "title": "distinction",
+        "category": "time",
+        "description": "counts difference time between utc event and now; returns object with distinction in format (*number of minutes* or *text*) and flag {result, isGone}",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            },
+            {
+                "name": "utc",
+                "type": "number"
+            },
+            {
+                "name": "isNum",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 13
+    },
+    {
+        "title": "event",
+        "category": "time",
+        "description": "returns number of events that can be completed before utc time (by default CET)",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            },
+            {
+                "name": "duration",
+                "type": "number"
+            },
+            {
+                "name": "utc",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 9
+    },
+    {
+        "title": "clock",
+        "category": "time",
+        "description": "returns degrees between 3 a.m. and hour/minute arrows by value in minute on clock",
+        "args": [
+            {
+                "name": "value",
+                "type": "string"
+            },
+            {
+                "name": "arrow",
+                "type": "number"
+            },
+            {
+                "name": "isPositive",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 17
+    },
+    {
+        "title": "formula",
+        "category": "time",
+        "description": "substitution into formulas body *start* to x and *duration* to y, return result as time string",
+        "args": [
+            {
+                "name": "start",
+                "type": "string"
+            },
+            {
+                "name": "duration",
+                "type": "number"
+            },
+            {
+                "name": "body",
+                "type": "string"
+            },
+            {
+                "name": "size",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 7
+    },
+    {
+        "title": "sequence",
+        "category": "time",
+        "description": "generates list of times with interval and checking each element on mask",
+        "args": [
+            {
+                "name": "start",
+                "type": "string"
+            },
+            {
+                "name": "interval",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "mask",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 17
+    },
+    {
+        "title": "period",
+        "category": "time",
+        "description": "receives number border and returns text of time period with random generated number",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 6
+    },
+    {
+        "title": "matrix",
+        "category": "time",
+        "description": "builds matrix of times with *step* and *delay* of each matrix row in minutes",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            },
+            {
+                "name": "size",
+                "type": "number"
+            },
+            {
+                "name": "step",
+                "type": "number"
+            },
+            {
+                "name": "delay",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 24
+    },
+    {
+        "title": "percentage",
+        "category": "time",
+        "description": "returns an array of rounded numbers, which are % of each time part from its maximum",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 14
+    },
+    {
+        "title": "timeRound",
+        "category": "time",
+        "description": "rounds time's minutes by parameter *num* and returns result",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 7
+    },
+    {
+        "title": "timeByPercent",
+        "category": "time",
+        "description": "generated and rounds time by % of *max* in minutes",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 4
+    },
+    {
+        "title": "timeByFibonacci",
+        "category": "time",
+        "description": "returns time generated by Fibonacci's number as minutes",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 14
+    },
+    {
+        "title": "timeByNumeralSystem",
+        "category": "time",
+        "description": "counts difference time between utc event and now; returns object with distinction in format (*number of minutes* or *text*) and flag {result, isGone}",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "system",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 5
+    },
+    {
+        "title": "randomTimes",
+        "category": "time",
+        "description": "returns list of times by parameters",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 16
+    },
+    {
+        "title": "timeDistance",
+        "category": "time",
+        "description": "returns time between 2 borders",
+        "args": [
+            {
+                "name": "start",
+                "type": "string"
+            },
+            {
+                "name": "end",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 8
+    },
+    {
+        "title": "timeAllocation",
+        "category": "time",
+        "description": "generates list of time by borders with step of allocation",
+        "args": [
+            {
+                "name": "start",
+                "type": "string"
+            },
+            {
+                "name": "end",
+                "type": "string"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "isIncludeEndBorder",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 16
+    },
+    {
+        "title": "timeByNumbersOperations",
+        "category": "time",
+        "description": "builds time by random math operations with base and numbers",
+        "args": [
+            {
+                "name": "base",
+                "type": "number"
+            },
+            {
+                "name": "numbers",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 13
+    },
+    {
+        "title": "timeByDeviation",
+        "category": "time",
+        "description": "creates time by random +- deviation inside *percent* of basic minutes value",
+        "args": [
+            {
+                "name": "base",
+                "type": "number"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            },
+            {
+                "name": "isTopBorder",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 5
+    },
+    {
+        "title": "timestampsByPercent",
+        "category": "time",
+        "description": "generates list of timestamps from now to *border* by *list* of %",
+        "args": [
+            {
+                "name": "border",
+                "type": "number"
+            },
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "isUniq",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 15
+    },
+    {
+        "title": "timeMove",
+        "category": "time",
+        "description": "moves time from current to custom by *num* of minutes and direction by *isForward*",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "isForward",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 5
+    },
+    {
+        "title": "timeByText",
+        "category": "time",
+        "description": "returns formatted time built with text like '15 hours 37 minutes'",
+        "args": [
+            {
+                "name": "content",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 28
+    },
+    {
+        "title": "timesByDigits",
+        "category": "time",
+        "description": "timesByDigits",
+        "args": [
+            {
+                "name": "numbers",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 14
+    },
+    {
+        "title": "timesSortedBy",
+        "category": "time",
+        "description": "sorting list of times by *criterion*: hour, minute or all; returns sorted array",
+        "args": [
+            {
+                "name": "arr",
+                "type": "string[]"
+            },
+            {
+                "name": "criterion",
+                "type": "string"
+            },
+            {
+                "name": "isIncrease",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 24
+    },
+    {
+        "title": "timeByFormula",
+        "category": "time",
+        "description": "generates time by formula with minutes *base*",
+        "args": [
+            {
+                "name": "formula",
+                "type": "string"
+            },
+            {
+                "name": "value",
+                "type": "number"
+            },
+            {
+                "name": "base",
+                "type": "number"
+            },
+            {
+                "name": "marker",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 2
+    },
+    {
+        "title": "timestampsByProgression",
+        "category": "time",
+        "description": "builds list of times with operations and minutes *base*",
+        "args": [
+            {
+                "name": "operations",
+                "type": "string[]"
+            },
+            {
+                "name": "length",
+                "type": "number"
+            },
+            {
+                "name": "base",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 11
+    },
+    {
+        "title": "timeByMultiplication",
+        "category": "time",
+        "description": "generates time by multiplication *percent* (10% => 1.1) and *base* while *iterations*}",
+        "args": [
+            {
+                "name": "base",
+                "type": "number"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            },
+            {
+                "name": "iterations",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 10
+    },
+    {
+        "title": "timeByParameters",
+        "category": "time",
+        "description": "returns time built by parameters's maximum borders with randomly generated value inside borders",
+        "args": [
+            {
+                "name": "hours",
+                "type": "number[]"
+            },
+            {
+                "name": "minutes",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 10
+    },
+    {
+        "title": "timestampsByRandomlyStep",
+        "category": "time",
+        "description": "returns list of times with randomly minutes step inside borders: 0 to *step* / *num*.",
+        "args": [
+            {
+                "name": "base",
+                "type": "number"
+            },
+            {
+                "name": "step",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 12
+    },
+    {
+        "title": "timeByDayPart",
+        "category": "time",
+        "description": "counts difference time between utc event and now; returns object with distinction in format (*number of minutes* or *text*) and flag {result, isGone}",
+        "args": [
+            {
+                "name": "part",
+                "type": "string"
+            },
+            {
+                "name": "base",
+                "type": "number"
+            },
+            {
+                "name": "isSubtraction",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 4
+    },
+    {
+        "title": "ms",
+        "category": "time",
+        "description": "convert / deconvert time in ms",
+        "args": [
+            {
+                "name": "value",
+                "type": "string | number"
+            },
+            {
+                "name": "convert",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 25
+    },
+    {
+        "title": "timeResidue",
+        "category": "time",
+        "description": "returns number of minutes to rich next hour",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 3
+    },
+    {
+        "title": "timePartMultiplicity",
+        "category": "time",
+        "description": "returns true / false by checking time part's multiplicity to *num*",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            },
+            {
+                "name": "index",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 3
+    },
+    {
+        "title": "timestampsByRounding",
+        "category": "time",
+        "description": "builds list of times from *time* to rounded hour time by *isForward* with *step*",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            },
+            {
+                "name": "step",
+                "type": "number"
+            },
+            {
+                "name": "isForward",
+                "type": "boolean"
+            },
+            {
+                "name": "isIncludeBorder",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 17
+    },
+    {
+        "title": "timestampsByBorders",
+        "category": "time",
+        "description": "returns list of times by minutes *steps* (% of difference between *max* and *min*)",
+        "args": [
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
+            {
+                "name": "steps",
+                "type": "numbers[]"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 10
+    },
+    {
+        "title": "gap",
+        "category": "day",
+        "description": "return difference between weekday and today in days, key parameter is a variant of day calling (tag or title)",
+        "args": [
+            {
+                "name": "weekday",
+                "type": "string"
+            },
+            {
+                "name": "key",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["day"],
+        "size": 13
+    },
+    {
+        "title": "weekdayByDate",
+        "category": "day",
+        "description": "finds weekday by *date* and returns it",
+        "args": [
+            {
+                "name": "date",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["day"],
+        "size": 21
+    },
+    {
+        "title": "monthWeekdays",
+        "category": "day",
+        "description": "returns num of remaining *weekday* days in current month",
+        "args": [
+            {
+                "name": "weekday",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["day"],
+        "size": 6
+    },
+    {
+        "title": "weekdayNumByYear",
+        "category": "day",
+        "description": "returns num of days *weekday* in *year*",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "weekday",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["day"],
+        "size": 10
+    },
+    {
+        "title": "weekdaysDifferenceByTime",
+        "category": "day",
+        "description": "returns difference between *days* with *times* in minutes",
+        "args": [
+            {
+                "name": "days",
+                "type": "string[]"
+            },
+            {
+                "name": "times",
+                "type": "string[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["day"],
+        "size": 13
+    },
+    {
+        "title": "part",
+        "category": "year",
+        "description": "returns % of year (check for leap year) for any period",
+        "args": [
+            {
+                "name": "part",
+                "type": "number"
+            },
+            {
+                "name": "size",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 8
+    },
+    {
+        "title": "year",
+        "category": "year",
+        "description": "returns an object {year, isLeap}, by *difference* parameter you can get more ancient year from Jesus's birthday or Rome's foundation",
+        "args": [
+            {
+                "name": "difference",
+                "type": "number"
+            },
+            {
+                "name": "isRome",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 12
+    },
+    {
+        "title": "months",
+        "category": "year",
+        "description": "allows to get an array of months (title or number) since year beginning, slices and returns it in descending order",
+        "args": [
+            {
+                "name": "length",
+                "type": "string"
+            },
+            {
+                "name": "isTitle",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 12
+    },
+    {
+        "title": "vacation",
+        "category": "year",
+        "description": "returns evenly distributed list of vacation's days per year and period",
+        "args": [
+            {
+                "name": "days",
+                "type": "string[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 11
+    },
+    {
+        "title": "endOfMonth",
+        "category": "year",
+        "description": "counts number of days to end date's month",
+        "args": [
+            {
+                "name": "date",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 4
+    },
+    {
+        "title": "yearResidue",
+        "category": "year",
+        "description": "returns date generated by % of current year's residue",
+        "args": [
+            {
+                "name": "percent",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 87
+    },
+    {
+        "title": "yearsByFormula",
+        "category": "year",
+        "description": "creates year by formula with variables with random value from 0 to 9",
+        "args": [
+            {
+                "name": "formula",
+                "type": "string"
+            },
+            {
+                "name": "length",
+                "type": "number"
+            },
+            {
+                "name": "marker",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 20
+    },
+    {
+        "title": "yearsByInterval",
+        "category": "year",
+        "description": "returns list of years with custom *length* built by cycle from *border* increasing/decreasing order by *step*.",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "step",
+                "type": "number"
+            },
+            {
+                "name": "border",
+                "type": "number"
+            },
+            {
+                "name": "isIncrease",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 9
+    },
+    {
+        "title": "yearsByCentury",
+        "category": "year",
+        "description": "returns array of 10 items (years) in *century* and *decade*",
+        "args": [
+            {
+                "name": "century",
+                "type": "number"
+            },
+            {
+                "name": "decade",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 9
+    },
+    {
+        "title": "yearRound",
+        "category": "year",
+        "description": "returns rounded year by *value* / *num*",
+        "args": [
+            {
+                "name": "value",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 5
+    },
+    {
+        "title": "exchangeYearDigit",
+        "category": "year",
+        "description": "exchanges places of digits by *indexes* in each year of *items* and returns result.",
+        "args": [
+            {
+                "name": "items",
+                "type": "number[]"
+            },
+            {
+                "name": "indexes",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 25
+    },
+    {
+        "title": "getYearDigit",
+        "category": "year",
+        "description": "returns digit of year number by *index* position",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "digit",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 3
+    },
+    {
+        "title": "changeYearDigit",
+        "category": "year",
+        "description": "updated with new *value* digit of year by *index* and returns year",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "index",
+                "type": "number"
+            },
+            {
+                "name": "value",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 15
+    },
+    {
+        "title": "yearMove",
+        "category": "year",
+        "description": "updates year by moving it forward / back with *border* checking",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "isForward",
+                "type": "boolean"
+            },
+            {
+                "name": "border",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 5
+    },
+    {
+        "title": "yearBorderCheck",
+        "category": "year",
+        "description": "checks if *year* are inside *borders*",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
+            {
+                "name": "isIncludeBorder",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 3
+    },
+    {
+        "title": "yearsByCenturies",
+        "category": "year",
+        "description": "generates years with of *centuries* and *values* (residue of division year on century)",
+        "args": [
+            {
+                "name": "centuries",
+                "type": "number[]"
+            },
+            {
+                "name": "values",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 13
+    },
+    {
+        "title": "yearDigitChanges",
+        "category": "year",
+        "description": "returns list of changes (-, + or =) between neighboring pairs of *year* digits",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 19
+    },
+    {
+        "title": "convert",
+        "category": "number",
+        "description": "convert Indian number to Roman and reverse, return string by default or number",
+        "args": [
+            {
+                "name": "value",
+                "type": "number"
+            },
+            {
+                "name": "convert",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 45
+    },
+    {
+        "title": "border",
+        "category": "number",
+        "description": "receives century (number Indian or string Roman) and returns array of first and last year of century",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "isRome",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 4
+    },
+    {
+        "title": "century",
+        "category": "number",
+        "description": "return century in Roman/Indian format by year (number)",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "isRome",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 3
+    },
+    {
+        "title": "numToDottedString",
+        "category": "number",
+        "description": "converts *number* into string with every 3 digits dot and returns it",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 11
+    },
+    {
+        "title": "numDigitInResidueExist",
+        "category": "number",
+        "description": "checks if digit *num* by *position* exist in it residue",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "position",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 11
+    },
+    {
+        "title": "digitsOfNum",
+        "category": "number",
+        "description": "returns list of num's digits, each one is multiplied by powered 10",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 17
+    },
+    {
+        "title": "numResidueSum",
+        "category": "number",
+        "description": "counts sum of all digits of num's fractional part",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 7
+    },
+    {
+        "title": "numSimpleProgression",
+        "category": "number",
+        "description": "builds a number progression by parameters",
+        "args": [
+            {
+                "name": "start",
+                "type": "number"
+            },
+            {
+                "name": "step",
+                "type": "number"
+            },
+            {
+                "name": "length",
+                "type": "number"
+            },
+            {
+                "name": "isNum",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 10
+    },
+    {
+        "title": "numPercentProgression",
+        "category": "number",
+        "description": "multiplies *num* by *iterations* on *percent* = (1 + *percent* * 0.01)",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            },
+            {
+                "name": "iterations",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 10
+    },
+    {
+        "title": "analysisProgressionIterations",
+        "category": "number",
+        "description": "analyzes list of numbers and returns array of math actions and values",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 29
+    },
+    {
+        "title": "numLevelsOfMultiplicity",
+        "category": "number",
+        "description": "counts times of division *value* on *num* without residue",
+        "args": [
+            {
+                "name": "value",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 8
+    },
+    {
+        "title": "numCompareWithBorders",
+        "category": "number",
+        "description": "filters years by comparing with num as border",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "isMore",
+                "type": "boolean"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 20
+    },
+    {
+        "title": "numPositionInsideBorders",
+        "category": "number",
+        "description": "returns % as position of *num* inside borders",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 4
+    },
+    {
+        "title": "distinction",
+        "category": "number",
+        "description": "builds list of borders as pairs in *numbers* chain starts from *min*",
+        "args": [
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "numbers",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 11
+    },
+    {
+        "title": "findMaximumNumDifferenceByIndexedDistance",
+        "category": "number",
+        "description": "looking for max difference between numbers on distance by *percent* of list length",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 18
+    },
+    {
+        "title": "findNumDistanceByDifference",
+        "category": "number",
+        "description": "returns positions of number which have difference by % (max - min)",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 21
+    },
+    {
+        "title": "findNumLargestCompareSubsequence",
+        "category": "number",
+        "description": "finds largest subsequence in *list*, each of its elements compared with *num* by *isMore* flag",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            },
+            {
+                "name": "isMore",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 20
+    },
+    {
+        "title": "findNumMultiplicityList",
+        "category": "number",
+        "description": "filters *list* of numbers and returns only divided on *num* without residue",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 11
+    },
+    {
+        "title": "numPercentBorders",
+        "category": "number",
+        "description": "returns borders generated as -+ *num* and *percent* of *num*",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 4
+    },
+    {
+        "title": "findNumDigitPercentFromAll",
+        "category": "number",
+        "description": "counts % from *num* as *digit* of *num* (#2 1368 - 68 into %)",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "digit",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 4
     }
 ]

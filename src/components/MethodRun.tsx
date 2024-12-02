@@ -42,7 +42,7 @@ const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size =
     return (
         <>
             <h2>Try it for yourself</h2>
-            <h3 className="pale">Current Argument: {argument.name} ({argument.type})</h3>
+            <h4 className="pale">Current Argument: {argument.name} ({argument.type})</h4>
 
             <textarea value={value} onChange={e => setValue(e.target.value)} placeholder="Value of argument" />
         

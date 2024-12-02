@@ -23,6 +23,8 @@ export const LOCATION_URL = 'https://ipgeolocation.abstractapi.com/v1/?api_key=4
 export const STORE_STATS_LIMIT = 5
 export const STORE_REVIEW_DEFAULT_RATE = 5e1
 
+export const short = text => text.split('').slice(0, 22)
+
 export const IMPORT_TEXT = `
     import {Datus, weekdaysTitles, weekdaysTags, dayParts, months, minutesMin, minutesMax, periods, seasons, timeMeasures} from 'datus.js' 
 `
