@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "datus.js": "^1.8.2",
+    "datus.js": "^2.0.0",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18"

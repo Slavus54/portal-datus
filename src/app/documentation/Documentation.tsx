@@ -26,13 +26,13 @@ const Documentation = () => {
 
     return (
         <Layout>
-            <h2>Methods of library to try</h2>
+            <h2>Library's Methods</h2>
 
             <SearchMethods value={value} setValue={setValue} category={category} setCategory={setCategory} filtered={filtered} setFiltered={setFiltered} />
 
             <div className="items medium">
                 {filtered.map((el, idx) => 
-                    <Link href={`/documentation/${category}/${idx}`} key={idx} className="card">
+                    <Link href={`/documentation/${category}/${idx}`} key={idx} className="card selected">
                         <b>{short(el.title)}()</b> <br />
     
                         <small>{el.size} lines</small>                     

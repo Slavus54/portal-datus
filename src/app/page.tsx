@@ -44,14 +44,13 @@ export default function Home() {
 
   return (
     <Layout>
-      <h2>Datus.JS - light and powerful library to work with dates</h2>
-      <h2>About</h2>
+      <h1>Datus.JS</h1>
 
-      <p>JavaScript library to handling, parsing, validation and formatting date or time.</p>
+      <p>JavaScript library to handling, parsing, validation and formatting date/time/year/weekday/number.</p>
 
       <div className="items vertical">
-        <h4 className="dot">* Stable Version: <span className="italic">1.9.8</span></h4>
-        <h4 className="dot">* Size ~ <span className="italic">195 kB</span> and <span className="italic">4.9K</span> lines of code with <span className="italic">100/310 methods</span></h4>
+        <h4 className="dot">* Stable Version: <span className="italic">2.0.0</span></h4>
+        <h4 className="dot">* Size ~ <span className="italic">200 kB</span> and <span className="italic">5.1K</span> lines of code with <span className="italic">135/330 methods</span></h4>
       </div>
 
       <Image src='/js.png' alt='' width={96} height={96} />

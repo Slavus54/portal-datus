@@ -34,15 +34,15 @@ const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, category, 
 
     return (
         <>
-            <input value={value} onChange={e => setValue(e.target.value)} placeholder="Enter title of method" type="text" />
+            <input value={value} onChange={e => setValue(e.target.value)} placeholder="Title of method" type="text" />
         
             <h4 className="pale">Choose Type</h4>
 
             <div className="items small">
-                {METHOD_TYPES.map(el => <div onClick={() => setCategory(el)} className={el === category ? "label chosen" : "label"}>{el}</div>)}
+                {METHOD_TYPES.map(el => <div onClick={() => setCategory(el)} className={el === category ? "label selected chosen" : "label selected"}>{el}</div>)}
             </div>
 
-            <h4>{filtered.length}/100 method{filtered.length > 1 ? 's' : ''} found</h4>
+            <h4>{filtered.length}/135 method{filtered.length > 1 ? 's' : ''} found</h4>
         </>
     )
 }

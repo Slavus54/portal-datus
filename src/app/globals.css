@@ -24,6 +24,7 @@ h3, h4, h5 {
 }
 
 h1, h2 {
+	user-select: none;
 	font-weight: 600;
 	margin: 1.25rem;
 }
@@ -38,6 +39,7 @@ p {
 	margin: .5rem;
 	line-height: 1.5rem;
 	text-align: center;
+	user-select: none;
 	width: 90%;
 }
 
@@ -92,7 +94,7 @@ small {
 textarea {
 	width: min(100%, 18rem);
 	height: 3rem;
-	font-size: .8rem;
+	font-size: .9rem;
 	letter-spacing: .05rem;
 	word-spacing: .05rem;
 	font-weight: 300;
@@ -104,6 +106,7 @@ textarea {
 	border: none;
 	outline: none;
 	user-select: none;
+	resize: none;
 	transition: .1s ease-in-out;
 }
 
@@ -137,7 +140,8 @@ button {
 	font-size: .95rem;
 	font-weight: 700;
 	box-shadow: 0px 0px 2px 1px #cfd2d4;
-	text-shadow: 0px 0px 1px #1c3b42;
+	text-shadow: 0px 0px .5px #181C1F;
+	text-transform: uppercase;
 	padding: 1rem 2rem;
 	margin: 1rem;
 	letter-spacing: .1rem;
@@ -205,6 +209,7 @@ nav {
 	color: #555c5f;
 	font-weight: 300;
 	font-size: 1.6rem;
+	user-select: none;
 	text-decoration: none;
 }
 
@@ -228,7 +233,8 @@ nav {
 	box-shadow: 0px 0px 3px .25px #cccccc;
 	font-size: 1rem;
 	padding: 1.5rem 3rem;
-	margin: 1rem;
+	margin-top: 4rem;
+	user-select: none;
 }
 
 .small {
@@ -252,7 +258,6 @@ nav {
 	width: max(10%, 12.5rem);
 	padding: 1.5rem 3rem;
 	margin: .3rem;
-	cursor: pointer;
 	transition: .1s ease-in-out;
 }
 
@@ -272,7 +277,6 @@ nav {
 	border-radius: .25rem;
 	width: 5rem;
 	height: 2.25rem;
-	cursor: pointer;
 	margin: 1rem 0rem 2.75rem 0rem;
 }
 
@@ -281,15 +285,24 @@ nav {
 	box-shadow: 0px 0px 3px .25px #cccccc;
 }
 
-.light, .light:hover {
+.selected {
+	cursor: pointer;
+	user-select: none;
+}
+
+.light {
 	text-shadow: none;
 	position: fixed;
-	font-weight: 300;
+	font-weight: 600;
 	bottom: 0;
+	border-radius: .5rem;
 	box-shadow: none;
 	font-size: .9rem;
-	width: 16rem;
-	background: inherit;
+	width: 7rem;
+	color:#bebebe;
+	background: #181C1F;
+	padding: 1rem;
+	transition: .1s ease-in-out;
 }
 
 .vertical {
@@ -306,4 +319,8 @@ nav {
 
 .pale {
 	opacity: .65;
+}
+
+.back {
+	margin: 5rem;
 }

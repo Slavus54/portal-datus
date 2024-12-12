@@ -70,7 +70,7 @@ const MethodPage = () => {
                 )}
             </div>
 
-            <button onClick={() => push('/documentation')} className="light">Back to methods</button>
+            <button onClick={() => push('/documentation')} className="back light">Back</button>
         </div>
     )
 }
