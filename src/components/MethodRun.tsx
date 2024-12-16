@@ -1,8 +1,9 @@
 'use client'
 
-import React, {useState, useMemo} from "react"
+import React, {useState, useMemo, useEffect} from "react"
 //@ts-ignore
 import {onRunMethod} from '@/engine/engine'
+import {STORE_METHODS_USING_KEY} from "@/env/env"
 import {MethodRunProps, MethodArgumentType} from '@/env/types'
 
 const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size = 0}) => {
@@ -16,6 +17,27 @@ const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size =
 
     useMemo(() => {
         setArgument(args[index])
+    }, [index])
+
+    useEffect(() => {
+        if (index === args.length - 1) {
+            let data: any = localStorage.getItem(STORE_METHODS_USING_KEY)
+
+            data = JSON.parse(data)
+
+            if (data) {        
+                data.total += 1
+
+                data.list = data.list.map((el: any) => {
+                    let flag = el.title === category
+                    let value = flag ? el.value + 1 : el.value
+
+                    return {title: el.title, value}
+                })
+
+                localStorage.setItem(STORE_METHODS_USING_KEY, JSON.stringify(data))
+            }
+        }
     }, [index])
 
     const onAddArgument = () => {
@@ -43,7 +65,7 @@ const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size =
         <>
             <h2>Try it for yourself</h2>
             <h4 className="pale">Argument: {argument.name} ({argument.type})</h4>
-
+   
             <textarea value={value} onChange={e => setValue(e.target.value)} placeholder="Value of argument" />
         
             <p>Result: {result ? result : '?'}</p>

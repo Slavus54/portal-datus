@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState, useEffect} from "react"
+import React, {useEffect} from "react"
 
 import methods from '@/api/methods.json'
 
@@ -42,7 +42,7 @@ const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, category, 
                 {METHOD_TYPES.map(el => <div onClick={() => setCategory(el)} className={el === category ? "label selected chosen" : "label selected"}>{el}</div>)}
             </div>
 
-            <h4>{filtered.length}/135 method{filtered.length > 1 ? 's' : ''} found</h4>
+            <h4>{filtered.length}/200 method{filtered.length > 1 ? 's' : ''} found</h4>
         </>
     )
 }

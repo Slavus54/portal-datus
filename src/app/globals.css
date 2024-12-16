@@ -23,20 +23,20 @@ h3, h4, h5 {
 	user-select: none;
 }
 
-h1, h2 {
+h1, h2, h3 {
 	user-select: none;
 	font-weight: 600;
-	margin: 1.25rem;
+	margin: 1.5rem;
 }
 
 h4, h5 {
-	margin: .75rem;
+	margin: .25rem;
 }
 
 p {
 	font-size: 1rem;
 	color: #1c1c1e;
-	margin: .5rem;
+	margin: .25rem;
 	line-height: 1.5rem;
 	text-align: center;
 	user-select: none;
@@ -143,7 +143,7 @@ button {
 	text-shadow: 0px 0px .5px #181C1F;
 	text-transform: uppercase;
 	padding: 1rem 2rem;
-	margin: 1rem;
+	margin: .5rem;
 	letter-spacing: .1rem;
 	border-radius: .25rem;
 	border: none;
@@ -220,7 +220,7 @@ nav {
 	flex-wrap: wrap;
     justify-content: space-around;
 	width: 80%;
-	margin: .5rem;
+	margin: .25rem;
 }
 
 .medium {
@@ -230,11 +230,46 @@ nav {
 .info {
 	cursor: pointer;
 	border-radius: 1rem;
-	box-shadow: 0px 0px 3px .25px #cccccc;
+	background-color: #f7f7f7;
+	border-radius: .75rem;
+	box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.2);
+	color: #555c5f;
 	font-size: 1rem;
-	padding: 1.5rem 3rem;
-	margin-top: 4rem;
+	padding: 1rem 3rem;
+	margin-top: 1.5rem;
 	user-select: none;
+}
+
+.using {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	width: min(80%, 24rem);
+}
+
+.using__item {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+	width: 4rem;
+	height: 3rem;
+	border-radius: .2rem;
+	box-shadow: 0px 0px 2px 1.5px #9be9a8;
+}
+
+.method {
+	font-size: 1rem;
+	color: #555c5f;
+	box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.2);
+	background-color: #f7f7f7;
+	border-radius: .75rem;
+	padding: .75rem 1.25rem;
+	cursor: pointer;
+	user-select: none;
+	margin: .5rem;
 }
 
 .small {
@@ -256,7 +291,7 @@ nav {
 	box-shadow: 0px 0px 3px .25px #cccccc;
 	border-radius: .25rem;
 	width: max(10%, 12.5rem);
-	padding: 1.5rem 3rem;
+	padding: 1.1rem 3rem;
 	margin: .3rem;
 	transition: .1s ease-in-out;
 }
@@ -277,7 +312,7 @@ nav {
 	border-radius: .25rem;
 	width: 5rem;
 	height: 2.25rem;
-	margin: 1rem 0rem 2.75rem 0rem;
+	margin: .5rem 0rem 1rem 0rem;
 }
 
 .chosen {
@@ -294,7 +329,7 @@ nav {
 	text-shadow: none;
 	position: fixed;
 	font-weight: 600;
-	bottom: 0;
+	bottom: -.25rem;
 	border-radius: .5rem;
 	box-shadow: none;
 	font-size: .9rem;
@@ -323,4 +358,30 @@ nav {
 
 .back {
 	margin: 5rem;
+}
+
+.icon {
+	width: 2rem;
+	margin: .5rem;
+}
+
+.selected-method {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	align-self: center;
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: #000000;
+	width: 2rem;
+	height: 2rem;
+	background-color: #ececec;
+	border-radius: 1rem;
+	padding: .5rem;
+	cursor: pointer;
+	user-select: none;
+	margin: 0;
+	padding: 0;
 }
