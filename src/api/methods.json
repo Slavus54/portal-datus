@@ -1230,7 +1230,7 @@
             },
             {
                 "name": "steps",
-                "type": "numbers[]"
+                "type": "number[]"
             },
             {
                 "name": "round",
@@ -1474,7 +1474,7 @@
             },
             {
                 "name": "borders",
-                "type": "numbers[]"
+                "type": "number[]"
             }
         ],
         "examples": [],
@@ -1590,7 +1590,7 @@
             },
             {
                 "name": "nums",
-                "type": "numbers[]"
+                "type": "number[]"
             }
         ],
         "examples": [],
@@ -3424,6 +3424,752 @@
         "size": 3
     },
     {
+        "title": "yearsByExceptTemplateDigit",
+        "category": "year",
+        "description": "generates list of years, each one has digit by *num* position not equal to *year* digit",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 14
+    },
+    {
+        "title": "yearsByPairs",
+        "category": "year",
+        "description": "builds list of years in pairs by parameters",
+        "args": [
+            {
+                "name": "start",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "step",
+                "type": "number"
+            },
+            {
+                "name": "difference",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 9
+    },
+    {
+        "title": "filterYearsByEqualAdjacentDigits",
+        "category": "year",
+        "description": "returns validates list of years, each one has equal adjacent digit by *position*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "position",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 14
+    },
+    {
+        "title": "findNearestYearByPercent",
+        "category": "year",
+        "description": "finds year among all list which is nearest to *percent* if max equals 100%",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "percent",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 18
+    },
+    {
+        "title": "percentByYearInsideBorders",
+        "category": "year",
+        "description": "counts difference time between utc event and now; returns object with distinction in format (*number of minutes* or *text*) and flag {result, isGone}",
+        "args": [
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
+            {
+                "name": "year",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 4
+    },
+    {
+        "title": "findDispersionOfCentury",
+        "category": "year",
+        "description": "finds difference between min and max year of *century* among elements of the list",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "century",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 19
+    },
+    {
+        "title": "findMaximumOfCentury",
+        "category": "year",
+        "description": "returns max year of century in *list*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "century",
+                "type": "number"
+            },
+            {
+                "name": "isEven",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 18
+    },
+    {
+        "title": "yearsByCenturiesRandomlyRow",
+        "category": "year",
+        "description": "generates list of randomly years by parameters",
+        "args": [
+            {
+                "name": "centuries",
+                "type": "number[]"
+            },
+            {
+                "name": "borders",
+                "type": "number[]"
+            },
+            {
+                "name": "iterations",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 11
+    },
+    {
+        "title": "yearsByCenturyBorders",
+        "category": "year",
+        "description": "builds list of years between centuries with *num* residue and *step*",
+        "args": [
+            {
+                "name": "borders",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "step",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 11
+    },
+    {
+        "title": "filterYearsByDifferenceSubsequence",
+        "category": "year",
+        "description": "returns filtered years, each pairs of them has difference in *seq* position",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "seq",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 17
+    },
+    {
+        "title": "filterYearsByDifferenceInverval",
+        "category": "year",
+        "description": "validates *list* of years between each pairs with difference less *max* and more than *min*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 17
+    },
+    {
+        "title": "yearsByCenturiesMultiplicity",
+        "category": "year",
+        "description": "generates by *centuries* and residue borders (*min* and *max*) by *num* step",
+        "args": [
+            {
+                "name": "centuries",
+                "type": "number[]"
+            },
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 17
+    },
+    {
+        "title": "filterYearsByResidueExclude",
+        "category": "year",
+        "description": "returns years which have other residue ( / 100) than *num*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 11
+    },
+    {
+        "title": "filterYearsByResidueInterval",
+        "category": "year",
+        "description": "filters and returns years which residue (/ 100) is inside the borders and *isEven* flag",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
+            {
+                "name": "isEven",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 16
+    },
+    {
+        "title": "filterYearsByCenturyExclude",
+        "category": "year",
+        "description": "returns only those years in *list*, which has other century",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "century",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 11
+    },
+    {
+        "title": "filterYearsByCenturyRadius",
+        "category": "year",
+        "description": "validates items of *list* if each one inside radius built as *century* +- *num*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "century",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 11
+    },
+    {
+        "title": "yearsByRow",
+        "category": "year",
+        "description": "generates list of years by parameters where *jump* at the end of each *iteration*",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "steps",
+                "type": "number[]"
+            },
+            {
+                "name": "jump",
+                "type": "number"
+            },
+            {
+                "name": "iterations",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 15
+    },
+    {
+        "title": "yearsByFractions",
+        "category": "year",
+        "description": "returns array generated as [] of *start* + (el / *list* max * difference between *start* and *end* - fraction)",
+        "args": [
+            {
+                "name": "start",
+                "type": "number"
+            },
+            {
+                "name": "end",
+                "type": "number"
+            },
+            {
+                "name": "list",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 23
+    },
+    {
+        "title": "yearsByJumping",
+        "category": "year",
+        "description": "builds list of years by *steps* of every interation and *jump* after that",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "steps",
+                "type": "number[]"
+            },
+            {
+                "name": "jumos",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 14
+    },
+    {
+        "title": "yearByRandomlyGap",
+        "category": "year",
+        "description": "generates year base on *year* with *num* randomly gap",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "isIncrease",
+                "type": "boolean"
+            },
+            {
+                "name": "isEven",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 12
+    },
+    {
+        "title": "filterYearsByDifferenceResidueInterval",
+        "category": "year",
+        "description": "filters if difference between years residue (el % 100) in each pair more than *min* and less than *max*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 15
+    },
+    {
+        "title": "yearsByRandomlyDeviation",
+        "category": "year",
+        "description": "returns list of years generated as array based on *year* with randomly deviation of *num*",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
+            {
+                "name": "isIncrease",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 11
+    },
+    {
+        "title": "filterAdjacentYearsBySameCentury",
+        "category": "year",
+        "description": "returns list of years which pair is same century",
+        "args": [
+            {
+                "name": "list",
+                "type": "number"
+            },
+            {
+                "name": "isSpread",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 16
+    },
+    {
+        "title": "yearDispersionByRadius",
+        "category": "year",
+        "description": "randomly generates borders of years by *num* radius",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 4
+    },
+    {
+        "title": "yearBordersByPercent",
+        "category": "year",
+        "description": "returns borders built by % of *size* in *borders*",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "size",
+                "type": "number"
+            },
+            {
+                "name": "borders",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 3
+    },
+    {
+        "title": "filterYearsByMultiplicitySubsequence",
+        "category": "year",
+        "description": "validates years by sequence of multiplicity numbers *numbers*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "borders",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 27
+    },
+    {
+        "title": "findYearsByMultiplicityOnDistance",
+        "category": "year",
+        "description": "builds list of year by *border* distance with step *num*",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "border",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 11
+    },
+    {
+        "title": "yearsByMultipleStep",
+        "category": "year",
+        "description": "returns *num* length list with randomly elements *year* + *max*",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "step",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 9
+    },
+    {
+        "title": "filterYearByDigitsDifference",
+        "category": "year",
+        "description": "validates year by sum of differences adjacent digits and returns true or false",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "digits",
+                "type": "number[]"
+            },
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 15
+    },
+    {
+        "title": "filterYearsByResidueDeviation",
+        "category": "year",
+        "description": "filters years by checking residue (/ 100) inside borders by *num* with deviation *size*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "size",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 13
+    },
+    {
+        "title": "findAverageYearsDeviation",
+        "category": "year",
+        "description": "returns average difference of residue (/ 100) between *num* and elements of *list*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 12
+    },
+    {
+        "title": "changeYearsByNearestResidueMultiplicity",
+        "category": "year",
+        "description": "updates list of years by finding nearest residue (/ 100) of *num* multiplicity value",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 14
+    },
+    {
+        "title": "yearsByRandomlySchemaDeviation",
+        "category": "year",
+        "description": "builds list of years by true (forward) / false (back) moving *schema*",
+        "args": [
+            {
+                "name": "year",
+                "type": "number"
+            },
+            {
+                "name": "schema",
+                "type": "string[]"
+            },
+            {
+                "name": "forward",
+                "type": "number"
+            },
+            {
+                "name": "back",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 11
+    },
+    {
+        "title": "filterYearsByCenturyDifference",
+        "category": "year",
+        "description": "filters years by pairs (first and second, second and third), in which elements have diffirence al least 1 century",
+        "args": [
+            {
+                "name": "list",
+                "type": "string[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 17
+    },
+    {
+        "title": "sortYearsByResidue",
+        "category": "year",
+        "description": "takes only those years, which are increase/decrease in order by *isIncrease*",
+        "args": [
+            {
+                "name": "list",
+                "type": "string[]"
+            },
+            {
+                "name": "isIncrease",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 14
+    },
+    {
         "title": "convert",
         "category": "number",
         "description": "convert Indian number to Roman and reverse, return string by default or number",
@@ -4104,5 +4850,283 @@
         "examples": [],
         "tags": ["number"],
         "size": 5
+    },
+    {
+        "title": "filterNumByDifferenceMultiplicity",
+        "category": "number",
+        "description": "filters and returns only those numbers, which difference is multiplicity for them both",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 15
+    },
+    {
+        "title": "findNumResiduePercent",
+        "category": "number",
+        "description": "returns % of *num* residue by *divider*",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "divider",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 3
+    },
+    {
+        "title": "countNumDigit",
+        "category": "number",
+        "description": "counts quantity of *digit* in *num*",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "digit",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 24
+    },
+    {
+        "title": "findNumSymmentry",
+        "category": "number",
+        "description": "returns % of *list* symmetry",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 19
+    },
+    {
+        "title": "findNumRowDispersion",
+        "category": "number",
+        "description": "counts num equals max / min ratio in row",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "utc",
+                "type": "number"
+            },
+            {
+                "name": "isNum",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 14
+    },
+    {
+        "title": "mixNumList",
+        "category": "number",
+        "description": "just mixes list of numbers and returns result",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 13
+    },
+    {
+        "title": "findNumListAverageDeviation",
+        "category": "number",
+        "description": "returns average *list* deviation from *num* by flag *isMore*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "isMore",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 16
+    },
+    {
+        "title": "findNearestNumByPairsMultiplication",
+        "category": "number",
+        "description": "finds nearest to *num* multiplication of numbers in *list*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "isNum",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 22
+    },
+    {
+        "title": "numDivisionOnDigit",
+        "category": "number",
+        "description": "returns *num* divided by *digit* number",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "digit",
+                "type": "number"
+            },
+            {
+                "name": "isNum",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 4
+    },
+    {
+        "title": "inverseNum",
+        "category": "number",
+        "description": "inverses each digit of num and returns result",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 14
+    },
+    {
+        "title": "getNumByRandomlyDigit",
+        "category": "number",
+        "description": "updates *num* by changing *digit* randomly",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "digit",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 11
+    },
+    {
+        "title": "getNumPairs",
+        "category": "number",
+        "description": "returns all pairs of numbers by *isIncrease* in *list*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "isIncrease",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 16
+    },
+    {
+        "title": "discardNumDigits",
+        "category": "number",
+        "description": "subtracts number by *digit* from *num*",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "digit",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 9
+    },
+    {
+        "title": "nearestPowerOfNumAndBase",
+        "category": "number",
+        "description": "returns nearest power of *base* to build *num*",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "base",
+                "type": "number"
+            },
+            {
+                "name": "accuracy",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 18
+    },
+    {
+        "title": "getNumMultiplicationPairs",
+        "category": "number",
+        "description": "finds all pairs of numbers which multiplication is equal to *num*",
+        "args": [
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["number"],
+        "size": 15
     }
 ]

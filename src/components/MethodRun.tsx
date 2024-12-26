@@ -9,6 +9,7 @@ import {MethodRunProps, MethodArgumentType} from '@/env/types'
 const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size = 0}) => {
     const [index, setIndex] = useState<number>(0)
     const [argument, setArgument] = useState<MethodArgumentType>(args[index])
+    const [computed, setComputed] = useState<string[]>(args.map(el => el.name))
     const [values, setValues] = useState<string[]>([])
     const [value, setValue] = useState<string>('')
     const [isAllArgsExist, setIsAllArgsExist] = useState<boolean>(false)
@@ -26,7 +27,8 @@ const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size =
             data = JSON.parse(data)
 
             if (data) {        
-                data.total += 1
+                data.calls += 1
+                data.lines += size
 
                 data.list = data.list.map((el: any) => {
                     let flag = el.title === category
@@ -42,11 +44,19 @@ const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size =
 
     const onAddArgument = () => {
         let data = values
+        let result: any[] = []
 
         if (value !== '') {
             data = [...data, value]
         }
         
+        args.map((el, idx) => {
+            let item = idx < data.length ? data[idx] : el.name
+            
+            result = [...result, item]
+        })
+        
+        setComputed(result)
         setValues(data)
         setValue('')
 
@@ -63,8 +73,11 @@ const MethodRun: React.FC<MethodRunProps> = ({title, category, args = [], size =
     
     return (
         <>
-            <h2>Try it for yourself</h2>
-            <h4 className="pale">Argument: {argument.name} ({argument.type})</h4>
+            <p><span className="js-red">const</span> datus = new <span className="js-inst">Datus</span>() <br /></p>
+                
+            <p>datus.<span className="js-pur">{title}</span>({computed.join(', ')})</p>
+
+            <h3>Argument: {argument.name} ({argument.type})</h3>
    
             <textarea value={value} onChange={e => setValue(e.target.value)} placeholder="Value of argument" />
         

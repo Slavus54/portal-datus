@@ -8,7 +8,7 @@ import Link from "next/link"
 
 import Layout from "@/components/Layout"
 import SearchMethods from "@/components/SearchMethods"
-import {short, STORE_VISIT_KEY, STORE_METHOD_KEY, STORE_SELECTED_METHODS_KEY, SELECTED_ICON} from "@/env/env"
+import {short, STORE_VISIT_KEY, STORE_METHOD_KEY, STORE_SELECTED_METHODS_KEY, STORE_CODE_METHOD_KEY, SELECTED_ICON} from "@/env/env"
 
 const Documentation = () => {
     const [filtered, setFiltered] = useState<any[]>([])
@@ -48,6 +48,18 @@ const Documentation = () => {
 
             return data
         }
+
+        const onInitCodeMethod = () => {
+            let data = localStorage.getItem(STORE_CODE_METHOD_KEY)
+
+            if (data === null) {
+                localStorage.setItem(STORE_CODE_METHOD_KEY, JSON.stringify({title: '', category: '', lines: 0}))
+            } else {
+                data = JSON.parse(data)
+            }
+
+            return data
+        }
        
         onInitVisit(datus.now())
 
@@ -58,6 +70,7 @@ const Documentation = () => {
         }
 
         onInitSelectedMethods()
+        onInitCodeMethod()
     }, [])
 
     return (
@@ -67,7 +80,7 @@ const Documentation = () => {
             <SearchMethods value={value} setValue={setValue} category={category} setCategory={setCategory} filtered={filtered} setFiltered={setFiltered} />
 
             {method !== null && method.title !== '' ? 
-                    <span onClick={() => push(`/documentation/${method.category}/${method.index}`)} className="method">Latest method: {method.title}()</span>    
+                    <span onClick={() => push(`/documentation/${method.category}/${method.index}`)} className="method">Last viewed: {method.title}()</span>    
                 :
                     <span className="method">Haven't tried any method yet</span>    
             }

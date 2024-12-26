@@ -1,6 +1,7 @@
 'use client'
 
 import {useState, useLayoutEffect} from "react"
+import {useRouter} from "next/navigation"
 import Link from "next/link"
 
 import Layout from "@/components/Layout"
@@ -8,6 +9,8 @@ import Layout from "@/components/Layout"
 import {short, STORE_SELECTED_METHODS_KEY} from '@/env/env'
 
 const SelectedPage = () => {
+    const {push} = useRouter()
+
     const [methods, setMethods] = useState<any[] | null>(null)
 
     useLayoutEffect(() => {
@@ -22,6 +25,7 @@ const SelectedPage = () => {
 
     const onReset = () => {
         localStorage.setItem(STORE_SELECTED_METHODS_KEY, JSON.stringify({text: '', methods: []}))
+        push('/')
     }
 
     return (
@@ -35,8 +39,8 @@ const SelectedPage = () => {
                     {methods.map((el, idx) => 
                         <Link href={`/documentation/${el.category}/${el.index}`} key={idx} className="card selected">
                             <b>{short(el.title)}()</b> <br />            
-
-                            <small>{el.category}</small>     
+                            <small>{el.category}</small> <br />
+                            selected {el.timestamp}
                         </Link>
                     )}
                 </div>

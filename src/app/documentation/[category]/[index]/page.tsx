@@ -3,13 +3,18 @@
 import {useParams, useRouter} from "next/navigation"
 import {useState, useEffect} from "react"
 
+//@ts-ignore
+import {Datus} from 'datus.js'
+
 import MethodRun from "@/components/MethodRun"
 
 import methods from '@/api/methods.json' 
-import {STORE_REVIEWS_KEY, STORE_REVIEW_DEFAULT_RATE, STORE_METHOD_KEY, STORE_SELECTED_METHODS_KEY, SELECTED_ICON} from '@/env/env'
+import {STORE_REVIEWS_KEY, STORE_REVIEW_DEFAULT_RATE, STORE_METHOD_KEY, STORE_SELECTED_METHODS_KEY, STORE_CODE_METHOD_KEY, SELECTED_LINK, CODE_ICON} from '@/env/env'
 
 const MethodPage = () => {
     const {push} = useRouter()
+
+    const datus = new Datus()
     const params = useParams<{category: string, index: string}>()
 
     const [method] = useState(methods.filter(el => el.category === params.category)[Number(params.index)])
@@ -27,7 +32,7 @@ const MethodPage = () => {
 
             let result: any = data[Number(params.index)]
  
-            if (result !== undefined) {
+            if (result !== null && result !== undefined) {
                 setRate(result.rate)
             }
         }
@@ -70,25 +75,30 @@ const MethodPage = () => {
     useEffect(() => {
         if (selectedMethods !== null && isSelected === null) {
             localStorage.setItem(STORE_SELECTED_METHODS_KEY, 
-                JSON.stringify({text: selectedMethods.text + method.title, methods: [...selectedMethods.methods, {title: method.title, category: method.category, index: Number(params.index)}]})
+                JSON.stringify({text: selectedMethods.text + method.title, methods: [...selectedMethods.methods, {title: method.title, category: method.category, index: Number(params.index), timestamp: datus.now()}]})
             )   
         }
     }, [isSelected])
 
+    const onCode = () => {
+        localStorage.setItem(STORE_CODE_METHOD_KEY, JSON.stringify({title: method.title, category: method.category, lines: method.size}))
+        push('/sandbox')
+    }
+
     return (
         <div className="main">
-            <h2>{method.title}({method.args.map(el => el.name).join(', ')})</h2> 
+            <h2>{method.title}()</h2> 
             <p>- {method.description}</p>
 
             {isSelected ? 
-                    <img src={SELECTED_ICON} className="icon" alt="selected" />
+                    <img src={SELECTED_LINK} className="icon" alt="selected" />
                 :
                     <span onClick={() => setIsSelected(null)} className="selected-method">+</span>
             }
 
             <MethodRun title={method.title} category={method.category} args={method.args} size={method.size} />
 
-            <h2>Rate: {rate}%</h2>
+            <h2>Rating: {rate}%</h2>
             <input value={rate} onChange={e => setRate(parseInt(e.target.value))} type="range" step={1} />
 
             <h2>Examples</h2>
@@ -101,6 +111,8 @@ const MethodPage = () => {
                     </div>
                 )}
             </div>
+
+            <img onClick={onCode} src={CODE_ICON} className="icon" alt="code" />
 
             <button onClick={() => push('/documentation')} className="back light">Back</button>
         </div>
