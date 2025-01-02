@@ -9,7 +9,7 @@ export const routes = [
     }
 ]
 
-export const METHOD_TYPES = ['date', 'time', 'day', 'year', 'number']
+export const METHOD_TYPES = ['date', 'time', 'day', 'year', 'other']
 
 export const STORE_VISIT_KEY = 'latest-visit'
 export const STORE_SESSION_DISTANCE_KEY = 'session-distance'
@@ -46,8 +46,6 @@ export const LINKS = [
         icon: 'https://img.icons8.com/ios-filled/50/github.png'
     }
 ]
-
-export const INITIAL_METHODS_TYPES = ['date', 'time', 'day', 'year', 'number']
 
 export const USING_COLORS = [
     {
@@ -116,19 +114,23 @@ export const CODE_SHARE_ICONS = [
 
 export const CODE_SIZE_COLORS = [
     {
-        code: '#19a600',
+        code: '#2ae8e2',
         coefficient: 0
     },
     {
+        code: '#19a600',
+        coefficient: .3
+    },
+    {
         code: '#decb00',
-        coefficient: .5
+        coefficient: .6
     },
     {
         code: '#de7300',
-        coefficient: .7
+        coefficient: .75
     },
     {
         code: '#de2100',
-        coefficient: 1
+        coefficient: .9
     }
 ]

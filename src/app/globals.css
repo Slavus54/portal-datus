@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 body {
 	font-family: "Geist Mono", monospace;
@@ -222,7 +223,7 @@ nav {
 	box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.2);
 	color: #555c5f;
 	font-size: 1rem;
-	padding: 1rem 3rem;
+	padding: .75rem 2.5rem;
 	margin-top: 1.5rem;
 	user-select: none;
 }
@@ -367,7 +368,7 @@ nav {
 
 .icon {
 	width: 2rem;
-	margin: .75rem;
+	margin: .25rem;
 }
 
 .selected-method {
@@ -409,6 +410,20 @@ nav {
 
 .hidden {
 	transform: translate(0rem, -5rem);
+}
+
+.welcome {
+	font-family: "Ubuntu", serif;
+	font-weight: 300;
+	font-size: 1rem;
+	opacity: .7;
+	user-select: none;
+	cursor: pointer;
+	transition: .15s ease-in-out;
+}
+
+.welcome:hover {
+	opacity: 1;
 }
 
 .code, .code:hover, .code::placeholder {

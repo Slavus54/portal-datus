@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "codus.js": "^1.1.2",
-    "datus.js": "^2.0.5",
+    "datus.js": "^2.0.6",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18"

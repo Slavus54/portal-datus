@@ -11,7 +11,11 @@ const SandboxPage = () => {
     const [lines, setLines] = useState<number>(0)
     const [code, setCode] = useState<string>('')
 
+    const [functionQuantity, setFunctionQuantity] = useState<number>(0)
+    const [variablesQuantity, setVariablesQuantity] = useState<number>(0)
+
     const linesLabel = useRef(null)
+    const area = useRef(null)
 
     useLayoutEffect(() => {
         let result = localStorage.getItem(STORE_CODE_METHOD_KEY)
@@ -27,6 +31,20 @@ const SandboxPage = () => {
         if (result) {        
             setLines(result.length)
         }      
+
+        if (code.includes('=>') && code.length !== 0) {
+            setFunctionQuantity(code.split('=>').length - 1)
+        } else {
+            setFunctionQuantity(0)
+        }
+
+        let lets = code.split('let')
+        let consts = code.split('const')
+
+        consts = consts.filter(el => !el.includes('(') && el.length !== 0)
+
+        setVariablesQuantity(lets.length + consts.length - 1)
+
     }, [code])
 
     useMemo(() => {
@@ -51,6 +69,18 @@ const SandboxPage = () => {
         }        
     }
 
+    const onKeyDown = (e: any) => {
+        if (e.code === 'Tab') {
+            let textarea: any = area.current
+
+            if (textarea) {
+                e.preventDefault()
+
+                setCode(code.slice(0, textarea.selectionStart) + '    ' + code.slice(textarea.selectionStart))
+            }        
+        }
+    }
+
     const onView = (link: string) => window.open(link)
 
     return (
@@ -63,9 +93,11 @@ const SandboxPage = () => {
 
                     <p>Inside method use global variables as context of class instance</p>
 
-                    <textarea value={code} onChange={e => setCode(e.target.value)} placeholder="Do it better..." className="code" />                   
+                    <textarea ref={area} value={code} onChange={e => setCode(e.target.value)} onKeyDown={e => onKeyDown(e)} placeholder="Do it better..." className="code" />                   
 
-                    <h4 ref={linesLabel}>Size: {code !== '' ? lines : 0}/{method.lines} lines</h4>
+                    <b ref={linesLabel}>Size: {code !== '' ? lines : 0}/{method.lines} lines</b>
+
+                    <p>Functions: {functionQuantity} Variables: {variablesQuantity}</p>
 
                     <button onClick={onCheck}>Check</button>
 

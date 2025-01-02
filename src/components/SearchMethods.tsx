@@ -42,7 +42,7 @@ const SearchMethods: React.FC<MethodSearchProps> = ({value, setValue, category, 
                 {METHOD_TYPES.map(el => <div onClick={() => setCategory(el)} className={el === category ? "label selected chosen" : "label selected"}>{el}</div>)}
             </div>
 
-            <h4>There are {filtered.length}/250 method{filtered.length > 1 ? 's' : ''}</h4>
+            <h4>There are {filtered.length}/{methods.length} method{filtered.length > 1 ? 's' : ''}</h4>
         </>
     )
 }

@@ -2310,6 +2310,182 @@
         "size": 12
     },
     {
+        "title": "lexisTime",
+        "category": "time",
+        "description": "makes great text about *time*",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 21
+    },
+    {
+        "title": "filterTimesBySchema",
+        "category": "time",
+        "description": "returns only those times, which were built according to *schema*",
+        "args": [
+            {
+                "name": "list",
+                "type": "string[]"
+            },
+            {
+                "name": "schema",
+                "type": "string"
+            },
+            {
+                "name": "marker",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 19
+    },
+    {
+        "title": "findOppositeTime",
+        "category": "time",
+        "description": "turns over time's hours and minutes",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 9
+    },
+    {
+        "title": "transferTimeMinutePart",
+        "category": "time",
+        "description": "turns over minutes of *time* and rounding hours",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 11
+    },
+    {
+        "title": "sortTimesByMinuteQuarters",
+        "category": "time",
+        "description": "quickly sorts times by minutes quarters and returns list with 4 quarters times",
+        "args": [
+            {
+                "name": "list",
+                "type": "string[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 13
+    },
+    {
+        "title": "isCleanTime",
+        "category": "time",
+        "description": "returns true/false depending on max time's part divided on min without residue",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 12
+    },
+    {
+        "title": "changeTimeByPercent",
+        "category": "time",
+        "description": "updates time's part in % by parameters",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "isMinutes",
+                "type": "boolean"
+            },
+            {
+                "name": "isIncrease",
+                "type": "boolean"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 19
+    },
+    {
+        "title": "filterTimesByPartsDifferenceMultiplicity",
+        "category": "time",
+        "description": "filters times checking parts difference by multiplicity",
+        "args": [
+            {
+                "name": "list",
+                "type": "string[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 14
+    },
+    {
+        "title": "findNearestTimeByMultiplicity",
+        "category": "time",
+        "description": "updates *time* by find nearest minutes value multiple to *num* and returns new time",
+        "args": [
+            {
+                "name": "time",
+                "type": "string"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 11
+    },
+    {
+        "title": "findAllTimePairsBySumMultiplicity",
+        "category": "time",
+        "description": "returns only those times which pair's sum of minutes divided on *num* without residue",
+        "args": [
+            {
+                "name": "list",
+                "type": "string[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["time"],
+        "size": 23
+    },
+    {
         "title": "gap",
         "category": "day",
         "description": "return difference between weekday and today in days, key parameter is a variant of day calling (tag or title)",
@@ -4144,7 +4320,7 @@
         "args": [
             {
                 "name": "list",
-                "type": "string[]"
+                "type": "number[]"
             }
         ],
         "examples": [],
@@ -4158,7 +4334,7 @@
         "args": [
             {
                 "name": "list",
-                "type": "string[]"
+                "type": "number[]"
             },
             {
                 "name": "isIncrease",
@@ -4170,192 +4346,284 @@
         "size": 14
     },
     {
-        "title": "convert",
-        "category": "number",
-        "description": "convert Indian number to Roman and reverse, return string by default or number",
+        "title": "filterYearsByResidueMultiplicityOnCentury",
+        "category": "year",
+        "description": "returns years, which century is multiplicity for residue (/ 100)",
         "args": [
             {
-                "name": "value",
-                "type": "number"
-            },
-            {
-                "name": "convert",
-                "type": "string"
+                "name": "list",
+                "type": "number[]"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 45
+        "tags": ["year"],
+        "size": 12
     },
     {
-        "title": "border",
-        "category": "number",
-        "description": "receives century (number Indian or string Roman) and returns array of first and last year of century",
+        "title": "yearsByMultiplicityInterval",
+        "category": "year",
+        "description": "generates years from *min* to *min* by *num* as step and multiplicity number",
         "args": [
+            {
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
+                "type": "number"
+            },
             {
                 "name": "num",
                 "type": "number"
-            },
-            {
-                "name": "isRome",
-                "type": "boolean"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 4
+        "tags": ["year"],
+        "size": 11
     },
     {
-        "title": "century",
-        "category": "number",
-        "description": "return century in Roman/Indian format by year (number)",
+        "title": "filterYearsByQuarterSchema",
+        "category": "year",
+        "description": "filters and returns only those year, which residue (/ 100) inside *schema* of quarters",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "schema",
+                "type": "string[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 13
+    },
+    {
+        "title": "convertYearResidueIntoGap",
+        "category": "year",
+        "description": "returns base of year (1964 => 1900) + converted residue 64 => 36 as year",
         "args": [
             {
                 "name": "year",
                 "type": "number"
-            },
-            {
-                "name": "isRome",
-                "type": "boolean"
             }
         ],
         "examples": [],
-        "tags": ["number"],
+        "tags": ["year"],
         "size": 3
     },
     {
-        "title": "numToDottedString",
-        "category": "number",
-        "description": "converts *number* into string with every 3 digits dot and returns it",
+        "title": "findYearsSubsequenceByAverageResidue",
+        "category": "year",
+        "description": "finds list of year which average residue (/ 100) is inside % of *num* by *fault*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "fault",
+                "type": "number"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 21
+    },
+    {
+        "title": "findYearsSubseqenceByDeviationSchema",
+        "category": "year",
+        "description": "builts list of year according on comparing each element with *num* if it will be more => true, less -false by *schema*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "schema",
+                "type": "string[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 13
+    },
+    {
+        "title": "yearsResidueBorders",
+        "category": "year",
+        "description": "generates year's [min, max] borders by residue (/ 100)",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 13
+    },
+    {
+        "title": "transformYearsResidue",
+        "category": "year",
+        "description": "updates year's residue by *ratio*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "round",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 11
+    },
+    {
+        "title": "smoothYearListByResidue",
+        "category": "year",
+        "description": "changes list of year by smooth element's resodue (/ 100), which should be closer to *num*",
+        "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 34
+    },
+    {
+        "title": "getYearDistanceByCenturyResidue",
+        "category": "year",
+        "description": "counts difference between *year* residue (/ 100) and *residue*",
         "args": [
             {
                 "name": "year",
                 "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 11
-    },
-    {
-        "title": "numDigitInResidueExist",
-        "category": "number",
-        "description": "checks if digit *num* by *position* exist in it residue",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
             },
             {
-                "name": "position",
+                "name": "residue",
                 "type": "number"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 11
+        "tags": ["year"],
+        "size": 8
     },
     {
-        "title": "digitsOfNum",
-        "category": "number",
-        "description": "returns list of num's digits, each one is multiplied by powered 10",
+        "title": "roundYearListByResidueToMultiplicityNum",
+        "category": "year",
+        "description": "updates year's residue if it more than *border* by rounding to *num*",
         "args": [
+            {
+                "name": "list",
+                "type": "number[]"
+            },
+            {
+                "name": "border",
+                "type": "number"
+            },
             {
                 "name": "num",
                 "type": "number"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 17
+        "tags": ["year"],
+        "size": 9
     },
     {
-        "title": "numResidueSum",
-        "category": "number",
-        "description": "counts sum of all digits of num's fractional part",
+        "title": "roundYearByBorderMultiplicity",
+        "category": "year",
+        "description": "updates year by *num* rounding it's residue (/ 100) subtracted *border*",
         "args": [
+            {
+                "name": "border",
+                "type": "number"
+            },
             {
                 "name": "num",
                 "type": "number"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 7
+        "tags": ["year"],
+        "size": 5
     },
     {
-        "title": "numSimpleProgression",
-        "category": "number",
-        "description": "builds a number progression by parameters",
+        "title": "findYearsDeviationSubsequenceByResidueList",
+        "category": "year",
+        "description": "finds largest subsequence with each year's residue more than nums each element",
         "args": [
             {
-                "name": "start",
-                "type": "number"
+                "name": "list",
+                "type": "number[]"
             },
             {
-                "name": "step",
-                "type": "number"
-            },
+                "name": "nums",
+                "type": "number[]"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 13
+    },
+    {
+        "title": "allYearsBordersByParameters",
+        "category": "year",
+        "description": "generates year borders in *century* with step *length*",
+        "args": [
             {
                 "name": "length",
                 "type": "number"
             },
             {
-                "name": "isNum",
-                "type": "boolean"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 10
-    },
-    {
-        "title": "numPercentProgression",
-        "category": "number",
-        "description": "multiplies *num* by *iterations* on *percent* = (1 + *percent* * 0.01)",
-        "args": [
+                "name": "century",
+                "type": "number"
+            },
             {
                 "name": "num",
                 "type": "number"
-            },
-            {
-                "name": "percent",
-                "type": "number"
-            },
-            {
-                "name": "iterations",
-                "type": "number"
-            },
-            {
-                "name": "round",
-                "type": "number"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 10
+        "tags": ["year"],
+        "size": 14
     },
     {
-        "title": "analysisProgressionIterations",
-        "category": "number",
-        "description": "analyzes list of numbers and returns array of math actions and values",
+        "title": "filterYearsByResidueOutsideBorders",
+        "category": "year",
+        "description": "returns only those years, which residue (/ 100) outside borders",
         "args": [
             {
                 "name": "list",
                 "type": "number[]"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 29
-    },
-    {
-        "title": "numLevelsOfMultiplicity",
-        "category": "number",
-        "description": "counts times of division *value* on *num* without residue",
-        "args": [
+            },
             {
-                "name": "value",
+                "name": "min",
+                "type": "number"
+            },
+            {
+                "name": "max",
                 "type": "number"
             },
             {
@@ -4364,39 +4632,61 @@
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 8
+        "tags": ["year"],
+        "size": 11
     },
     {
-        "title": "numCompareWithBorders",
-        "category": "number",
-        "description": "filters years by comparing with num as border",
+        "title": "getAllYearsBordersFromList",
+        "category": "year",
+        "description": "finds pairs of years (borders) validated with *difference* by *isMore* and multiplicity *num*",
         "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
             {
                 "name": "list",
                 "type": "number[]"
+            },
+            {
+                "name": "difference",
+                "type": "number"
             },
             {
                 "name": "isMore",
                 "type": "boolean"
             },
             {
-                "name": "percent",
+                "name": "num",
                 "type": "number"
-            }
+            }         
         ],
         "examples": [],
-        "tags": ["number"],
+        "tags": ["year"],
         "size": 20
     },
     {
-        "title": "numPositionInsideBorders",
-        "category": "number",
-        "description": "returns % as position of *num* inside borders",
+        "title": "transformYearsBordersByMultiplicity",
+        "category": "year",
+        "description": "transforms borders of years by *num* as multiple number",
+        "args": [
+            {
+                "name": "borders",
+                "type": "number[]"
+            },
+            {
+                "name": "num",
+                "type": "number"
+            },
+            {
+                "name": "isInside",
+                "type": "boolean"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 3
+    },
+    {
+        "title": "yearByMultiplicityRandomly",
+        "category": "year",
+        "description": "returns randomly generated year with *num* mutliple inside borders",
         "args": [
             {
                 "name": "num",
@@ -4409,724 +4699,230 @@
             {
                 "name": "max",
                 "type": "number"
+            }
+        ],
+        "examples": [],
+        "tags": ["year"],
+        "size": 8
+    },
+    {
+        "title": "filterByValue",
+        "category": "other",
+        "description": "filter date by period with int value and return true/false",
+        "args": [
+            {
+                "name": "date",
+                "type": "string"
             },
             {
-                "name": "round",
+                "name": "period",
+                "type": "string"
+            },
+            {
+                "name": "value",
                 "type": "number"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 4
+        "tags": ["other"],
+        "size": 10
     },
     {
-        "title": "buildNumBorders",
-        "category": "number",
-        "description": "builds list of borders as pairs in *numbers* chain starts from *min*",
+        "title": "palindrom",
+        "category": "other",
+        "description": "check if date or time is palindrom and return true/false",
         "args": [
             {
-                "name": "min",
-                "type": "number"
+                "name": "value",
+                "type": "string"
             },
             {
-                "name": "numbers",
-                "type": "number[]"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 11
-    },
-    {
-        "title": "findMaximumNumDifferenceByIndexedDistance",
-        "category": "number",
-        "description": "looking for max difference between numbers on distance by *percent* of list length",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            },
-            {
-                "name": "percent",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 18
-    },
-    {
-        "title": "findNumDistanceByDifference",
-        "category": "number",
-        "description": "returns positions of number which have difference by % (max - min)",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            },
-            {
-                "name": "percent",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 21
-    },
-    {
-        "title": "findNumLargestCompareSubsequence",
-        "category": "number",
-        "description": "finds largest subsequence in *list*, each of its elements compared with *num* by *isMore* flag",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            },
-            {
-                "name": "percent",
-                "type": "number"
-            },
-            {
-                "name": "isMore",
+                "name": "isDate",
                 "type": "boolean"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 20
-    },
-    {
-        "title": "findNumMultiplicityList",
-        "category": "number",
-        "description": "filters *list* of numbers and returns only divided on *num* without residue",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            },
-            {
-                "name": "percent",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 11
-    },
-    {
-        "title": "numPercentBorders",
-        "category": "number",
-        "description": "returns borders generated as -+ *num* and *percent* of *num*",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "percent",
-                "type": "number"
-            },
-            {
-                "name": "round",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 4
-    },
-    {
-        "title": "findNumDigitPercentFromAll",
-        "category": "number",
-        "description": "counts % from *num* as *digit* of *num* (#2 1368 - 68 into %)",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "digit",
-                "type": "number"
-            },
-            {
-                "name": "round",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 4
-    },
-    {
-        "title": "numReverse",
-        "category": "number",
-        "description": "just reverses given number",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 12
-    },
-    {
-        "title": "largestFractionaNumPartByDividerInterval",
-        "category": "number",
-        "description": "finds divider of *num* among list of *interval*, which divides *num* with largest fractional part",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "interval",
-                "type": "number[]"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 17
-    },
-    {
-        "title": "nearestBaseOfNumPower",
-        "category": "number",
-        "description": "returns base, which will be too close by powering to *num*",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "power",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
+        "tags": ["other"],
         "size": 9
     },
     {
-        "title": "getNumTask",
-        "category": "number",
-        "description": "generates simple math task",
+        "title": "isWillBe",
+        "category": "other",
+        "description": "checking and returns true/false by proviso 'Date is today or will be in the future'",
         "args": [
             {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "symbol",
+                "name": "date",
                 "type": "string"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 35
-    },
-    {
-        "title": "findNumDigitPercentFromOtherDigit",
-        "category": "number",
-        "description": "returns rounded % of *digit* from *other*",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "digit",
-                "type": "number"
-            },
-            {
-                "name": "other",
-                "type": "number"
-            },
-            {
-                "name": "round",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 5
-    },
-    {
-        "title": "findNearestNumByMultiplicity",
-        "category": "number",
-        "description": "returns nearest multiplication *num* on *times* divided on *multiple* without any residue",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "times",
-                "type": "number"
-            },
-            {
-                "name": "multiple",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 5
-    },
-    {
-        "title": "findSmallestNumByMultipleList",
-        "category": "number",
-        "description": "builds multiplication of each element of *list* while current value divided on element without residue",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 11
-    },
-    {
-        "title": "getNumDigitFactorial",
-        "category": "number",
-        "description": "generates factorial value based on num's digits",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 13
-    },
-    {
-        "title": "getNumSequence",
-        "category": "number",
-        "description": "finds smallest/largest value and builds sequence by *isIncrese* flag with grow/decrease ordered numbers for one iteration",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            },
-            {
-                "name": "isIncrease",
-                "type": "boolean"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 13
-    },
-    {
-        "title": "splitNum",
-        "category": "number",
-        "description": "splits *num* on two values: first *digit* of number and *num* - first",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "digit",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 10
-    },
-    {
-        "title": "joinNum",
-        "category": "number",
-        "description": "generates values as sum of random choosen number from *list* powered by random extent from 0 to *power*",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            },
-            {
-                "name": "iterations",
-                "type": "number"
-            },
-            {
-                "name": "power",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 10
-    },
-    {
-        "title": "getNumByDigit",
-        "category": "number",
-        "description": "returns randomly generated number, which length is *num*",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 9
-    },
-    {
-        "title": "factorizeNum",
-        "category": "number",
-        "description": "builds an array of dividers of *num* with *size* length",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "size",
-                "type": "number"
-            },
-            {
-                "name": "min",
-                "type": "number"
-            },
-            {
-                "name": "max",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 14
-    },
-    {
-        "title": "findNumNearestPowerDifference",
-        "category": "number",
-        "description": "returns % of difference between nearest powered numbers of *num*",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "power",
-                "type": "number"
-            },
-            {
-                "name": "isPrev",
-                "type": "boolean"
-            },
-            {
-                "name": "round",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 8
-    },
-    {
-        "title": "findNumDeviationPercent",
-        "category": "number",
-        "description": "counts deviation by *num* as % of max / min number (by *isMore*) of *list*",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            },
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "isMore",
-                "type": "boolean"
-            },
-            {
-                "name": "round",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 5
-    },
-    {
-        "title": "filterNumByDifferenceMultiplicity",
-        "category": "number",
-        "description": "filters and returns only those numbers, which difference is multiplicity for them both",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 15
-    },
-    {
-        "title": "findNumResiduePercent",
-        "category": "number",
-        "description": "returns % of *num* residue by *divider*",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "divider",
-                "type": "number"
-            },
-            {
-                "name": "round",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
+        "tags": ["other"],
         "size": 3
     },
     {
-        "title": "countNumDigit",
-        "category": "number",
-        "description": "counts quantity of *digit* in *num*",
+        "title": "func",
+        "category": "other",
+        "description": "validates time hours and compared it to minutes by formula.",
         "args": [
             {
-                "name": "num",
-                "type": "number"
+                "name": "time",
+                "type": "string"
             },
             {
-                "name": "digit",
-                "type": "number"
+                "name": "body",
+                "type": "string"
+            },
+            {
+                "name": "marker",
+                "type": "string"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 24
+        "tags": ["other"],
+        "size": 5
     },
     {
-        "title": "findNumSymmentry",
-        "category": "number",
-        "description": "returns % of *list* symmetry",
+        "title": "isWeekend",
+        "category": "other",
+        "description": "checks and returns if today is Saturday/Sunday",
         "args": [
             {
-                "name": "list",
-                "type": "number[]"
+                "name": "time",
+                "type": "string"
             },
             {
-                "name": "round",
-                "type": "number"
+                "name": "body",
+                "type": "string"
+            },
+            {
+                "name": "marker",
+                "type": "string"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 19
-    },
-    {
-        "title": "findNumRowDispersion",
-        "category": "number",
-        "description": "counts num equals max / min ratio in row",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            },
-            {
-                "name": "utc",
-                "type": "number"
-            },
-            {
-                "name": "isNum",
-                "type": "boolean"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 14
-    },
-    {
-        "title": "mixNumList",
-        "category": "number",
-        "description": "just mixes list of numbers and returns result",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 13
-    },
-    {
-        "title": "findNumListAverageDeviation",
-        "category": "number",
-        "description": "returns average *list* deviation from *num* by flag *isMore*",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            },
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "isMore",
-                "type": "boolean"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 16
-    },
-    {
-        "title": "findNearestNumByPairsMultiplication",
-        "category": "number",
-        "description": "finds nearest to *num* multiplication of numbers in *list*",
-        "args": [
-            {
-                "name": "list",
-                "type": "number[]"
-            },
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "isNum",
-                "type": "boolean"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 22
-    },
-    {
-        "title": "numDivisionOnDigit",
-        "category": "number",
-        "description": "returns *num* divided by *digit* number",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "digit",
-                "type": "number"
-            },
-            {
-                "name": "isNum",
-                "type": "boolean"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
+        "tags": ["other"],
         "size": 4
     },
     {
-        "title": "inverseNum",
-        "category": "number",
-        "description": "inverses each digit of num and returns result",
+        "title": "filterPartBySchema",
+        "category": "other",
+        "description": "check date or time period by running code in *schema*",
         "args": [
             {
-                "name": "num",
-                "type": "number"
-            }
-        ],
-        "examples": [],
-        "tags": ["number"],
-        "size": 14
-    },
-    {
-        "title": "getNumByRandomlyDigit",
-        "category": "number",
-        "description": "updates *num* by changing *digit* randomly",
-        "args": [
-            {
-                "name": "num",
-                "type": "number"
+                "name": "content",
+                "type": "string"
             },
             {
-                "name": "digit",
+                "name": "isDate",
+                "type": "boolean"
+            },
+            {
+                "name": "schema",
+                "type": "string"
+            },
+            {
+                "name": "index",
                 "type": "number"
             }
         ],
         "examples": [],
-        "tags": ["number"],
+        "tags": ["other"],
         "size": 11
     },
     {
-        "title": "getNumPairs",
-        "category": "number",
-        "description": "returns all pairs of numbers by *isIncrease* in *list*",
+        "title": "similarity",
+        "category": "other",
+        "description": "compare date/time with *mask* and returns % analogy by cheking each period",
         "args": [
             {
-                "name": "list",
-                "type": "number[]"
+                "name": "content",
+                "type": "string"
             },
             {
-                "name": "isIncrease",
+                "name": "isDate",
+                "type": "boolean"
+            },
+            {
+                "name": "mask",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["other"],
+        "size": 21
+    },
+    {
+        "title": "isEven",
+        "category": "other",
+        "description": "checking parts of date/time and returns boolean flag items 'Is it even ?' + GCD (greatest common divisor)",
+        "args": [
+            {
+                "name": "content",
+                "type": "string"
+            },
+            {
+                "name": "isDate",
                 "type": "boolean"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 16
+        "tags": ["other"],
+        "size": 27
     },
     {
-        "title": "discardNumDigits",
-        "category": "number",
-        "description": "subtracts number by *digit* from *num*",
+        "title": "isTime",
+        "category": "other",
+        "description": "validate *content* value on time format HH:MM",
         "args": [
             {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "digit",
-                "type": "number"
+                "name": "content",
+                "type": "string"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 9
+        "tags": ["other"],
+        "size": 17
     },
     {
-        "title": "nearestPowerOfNumAndBase",
-        "category": "number",
-        "description": "returns nearest power of *base* to build *num*",
+        "title": "isNight",
+        "category": "other",
+        "description": "checks time and returns if it during night",
         "args": [
             {
-                "name": "num",
-                "type": "number"
-            },
-            {
-                "name": "base",
-                "type": "number"
-            },
-            {
-                "name": "accuracy",
-                "type": "number"
+                "name": "time",
+                "type": "string"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 18
+        "tags": ["other"],
+        "size": 10
     },
     {
-        "title": "getNumMultiplicationPairs",
-        "category": "number",
-        "description": "finds all pairs of numbers which multiplication is equal to *num*",
+        "title": "isUniq",
+        "category": "other",
+        "description": "checks if date/time has uniq digits",
         "args": [
             {
-                "name": "num",
-                "type": "number"
+                "name": "content",
+                "type": "string"
             }
         ],
         "examples": [],
-        "tags": ["number"],
-        "size": 15
+        "tags": ["other"],
+        "size": 4
+    },
+    {
+        "title": "isDate",
+        "category": "other",
+        "description": "validates if content is real date - DD.MM.YYYY",
+        "args": [
+            {
+                "name": "content",
+                "type": "string"
+            }
+        ],
+        "examples": [],
+        "tags": ["other"],
+        "size": 11
     }
 ]

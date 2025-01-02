@@ -1,0 +1,37 @@
+[
+    {
+        "key": "Russia",
+        "icon": "https://web.telegram.org/k/assets/img/emoji/1f1f7-1f1fa.png",
+        "text": "Приветствуем вас на платформе!"
+    },
+    {
+        "key": "Israel",
+        "icon": "https://web.telegram.org/k/assets/img/emoji/1f1ee-1f1f1.png",
+        "text": "ברוכים הבאים לפלטפורמה!"
+    },
+    {
+        "key": "Slovakia",
+        "icon": "https://web.telegram.org/k/assets/img/emoji/1f1f8-1f1f0.png",
+        "text": "Vitajte na platforme!"
+    },
+    {
+        "key": "USA",
+        "icon": "https://web.telegram.org/k/assets/img/emoji/1f1fa-1f1f2.png",
+        "text": "Welcome to the platform!"
+    },
+    {
+        "key": "Ukraine",
+        "icon": "https://web.telegram.org/k/assets/img/emoji/1f1fa-1f1e6.png",
+        "text": "Вітаємо Вас на платформі!"
+    },
+    {
+        "key": "Czech Republic",
+        "icon": "https://web.telegram.org/k/assets/img/emoji/1f1e8-1f1ff.png",
+        "text": "Vítejte na platformě!"
+    },
+    {
+        "key": "Belarus",
+        "icon": "https://web.telegram.org/k/assets/img/emoji/1f1e7-1f1fe.png",
+        "text": "Вітаем вас на платформе!"
+    }
+]
